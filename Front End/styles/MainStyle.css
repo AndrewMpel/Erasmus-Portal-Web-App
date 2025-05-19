@@ -1,0 +1,551 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: whitesmoke;
+    padding: 0;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+* {
+    box-sizing: border-box;
+}
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: 
+            "l l l l l l l l l l"
+            "h h h h h h h h h h"
+            "n n c c c c c c N N"
+            "n n c c c c c c N N"
+            "n n c c c c c c N N"
+            "n n c c c c c c N N"
+            "f f f f f f f f f f"; 
+        grid-gap: 0px;       
+    }
+    .More-container {
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: 
+            "l l l l l l l l l l"
+            "h h h h h h h h h h"
+            "c c c c c c c c N N"
+            "c c c c c c c c N N"
+            "c c c c c c c c N N"
+            "c c c c c c c c N N"
+            "f f f f f f f f f f"; 
+        grid-gap: 0px;       
+    }
+    .News{
+        grid-area: N;
+        width: 100%;
+        background-size: cover;
+        background-image: url(../media/BackGround.png);
+        background-size: cover;
+        background-position: center;
+    }
+    .NewsTitle{
+        text-align: center;
+        color: #1d2a42;
+        font-size: 1.3rem;
+    }
+    .NewsContent{
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+        color: #920000;
+        font-size: 1.2rem;
+        margin-top: 1.4cm;
+        padding: 10px;
+        display: grid;
+        
+    }
+    .header {
+        position: relative;
+        background-color: #1d2a42;
+        padding: 20px;
+        color: white;
+        grid-area: h;
+    }
+
+    .header h1 {
+        text-shadow: 4px 4px 5px black;
+        text-align: center;
+        font-size: 2.2rem;
+    }
+    .logo {
+        width: 105px;
+        height: 105px;
+        margin-right: 20px;
+    }
+    .Navbar {
+        grid-area: n;
+        margin-top: 0;
+    }
+
+    .Navbuttons {
+        width: 100%;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        margin-top: 3px;
+        height: 40px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .Navbuttons:hover {
+        font-size: 1.2rem;
+    }
+
+    .NavLinks {
+        text-decoration: none;
+        color: white;
+    }
+    .content {
+        padding-left: 40px;
+        padding-right: 40px;
+        grid-area: c;
+        text-align: justify;
+        font-size: larger;
+        max-width: 100%;
+        box-shadow: inset 0px 5px 20px rgb(187, 187, 187);
+    }
+
+    .content h2, .content h3 {
+        color: #1d2a42;
+    }
+    .LogButtons{
+        grid-area: l;
+        height: 30px;
+        width: 100%;
+        background-color: #1d2a42;
+        justify-content: right;
+        border: none;
+        display: flex;
+        align-items: center;
+        
+    }
+    .LogBtn{
+        min-width: 3cm;
+        max-width: 3cm;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .LogBtn:hover{
+        font-size: 1.2rem;
+    }
+    .LogBtn{
+        text-decoration: none;
+        color: white;
+    }
+    .NavLinks{
+        text-decoration: none;
+        color: white;
+    }
+    .img1 {
+        width: 45%;
+        height: auto;
+        float: left;
+        margin-right: 5%;
+        margin-top: 2cm;
+    }
+    .img2 {
+
+        width: 45%;
+        margin-left: 5%;
+        margin-top: 2cm;
+        height: auto;
+    }
+    .footer{
+        grid-area : f;
+        background-color: rgb(22, 21, 21);
+        width: 100%;
+        height: 110px;
+        display: flex;
+        justify-content: center;
+        .ErasmusLogo{
+            width: auto;
+            height: auto;
+            margin: 20px;
+        }
+        .uoplogo{
+            width: auto;
+            height: auto;
+            margin: 20px;
+        }
+    }
+    .video{
+        width: 70%;
+        height: fit-content;
+
+        margin-left: 15%;
+        margin-top: 1cm;
+        margin-bottom: 1cm;
+        box-shadow: 0px 0px 10px rgb(168, 168, 168);
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .container{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: "l l l l l l l l l l"
+                            "h h h h h h h h h h"
+                             "h h h h h h h h h h"
+                             "n n n n n n n n n n"
+                             "N N N N N N N N N N"
+                             "c c c c c c c c c c"
+                             "c c c c c c c c c c"
+                             "c c c c c c c c c c"
+                             "c c c c c c c c c c"
+                             "f f f f f f f f f f"; 
+        grid-gap: 0px;       
+    }
+    .LogButtons{
+        grid-area: l;
+        height: 30px;
+        width: 100%;
+        background-color: #1d2a42;;
+        justify-content: right;
+        border: none;
+        display: flex;
+        align-items: center;
+        
+    }
+    .LogBtn{
+        min-width: 15%;
+        max-width: 15%;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        margin-top: 5px;
+        margin-right: 5px;
+        font-size: 14px;
+        margin-right: 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .LogBtn:hover{
+        font-size: 1.3rem;
+    }
+    .LogBtn{
+        text-decoration: none;
+        color: white;
+    }
+    .NavLinks{
+        text-decoration: none;
+        color: white;
+    }
+    .header h1 {
+        text-shadow: 4px 4px 5px black;
+        text-align: center;
+        font-size: 35px
+    }
+    .logo{
+        align-self: relative;
+        width: 75px;
+        height: 75px;
+        margin-right: 20px;
+        
+    }
+    .header{
+        position: relative;
+        background-color: #1d2a42;
+        padding: 20px;
+        color: white;
+        grid-area: h;
+    }
+    
+    .content{
+        padding: 20px;
+        font-size: 1.2rem;
+        h3{
+            color: #1d2a42;
+        }
+        h2{
+            color: #1d2a42;
+        }
+        grid-area: c;
+        text-align: justify;
+    }
+    .footer{
+        grid-area : f;
+    }
+    
+    .Navbar{
+        display: flex; 
+        justify-content: center; 
+        gap : 1px;
+        
+        margin-top: 0;
+        grid-area: n;
+        border-width: 1px solid black;
+    }
+    .Navbuttons{
+        min-width: 33.3%;
+        max-width: 33.3%;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        height: 40px;
+        margin-top: 1px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+    }
+    .Navbuttons:hover{
+        font-size: 16px;
+    }
+    .NavLinks{
+        text-decoration: none;
+        color: white;
+    }
+    .img1 {
+        width: 45%;
+        height: auto;
+        float: left;
+        margin-right: 5%;
+        margin-top: 1cm;
+    }
+    .img2 {
+
+        width: 45%;
+        margin-left: 5%;
+        margin-top: 1cm;
+        height: auto;
+    }
+    .footer{
+        grid-area : f;
+        background-color: rgb(22, 21, 21);
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        .ErasmusLogo{
+            width: 120px;
+            height: auto;
+            margin: 20px;
+        }
+        .uoplogo{
+            width: auto;
+            height: auto;
+            margin: 20px;
+        }
+    }
+    .News{
+        grid-area: N;
+        width: 100%;
+        box-shadow: 0px 20px 10px rgb(218, 218, 218);
+        .NewsTitle{
+            text-align: center;
+            color: #1d2a42;
+            font-size: 1.4rem;
+        }
+        .NewsContent{
+            text-align: center;
+            justify-self: center;
+            align-self: center;
+            color: #920000;
+            font-size: 1.2rem;
+            margin-top: 1cm;
+        }
+    }
+    .video{
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        margin-top: 1cm;
+        margin-bottom: 1cm;
+        box-shadow: 0px 0px 10px rgb(168, 168, 168);
+    }
+}
+@media screen and (max-width: 600px) {
+    .container{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: "l l l l l l l l l l"
+                            "h h h h h h h h h h"
+                             "h h h h h h h h h h"
+                             "n n n n n n n n n n"
+                             "N N N N N N N N N N"
+                             "c c c c c c c c c c"
+                             "c c c c c c c c c c"
+                             "c c c c c c c c c c"
+                             "c c c c c c c c c c"
+                             "f f f f f f f f f f"; 
+        grid-gap: 0px;       
+    }
+    .header h1 {
+        text-shadow: 4px 4px 5px black;
+        text-align: center;
+        font-size: 30px
+    }
+    .LogButtons{
+        grid-area: l;
+        height: 30px;
+        width: 100%;
+        background-color: #1d2a42;
+        justify-content: right;
+        border: none;
+        display: flex;
+        align-items: center;
+        
+    }
+    .LogBtn{
+        min-width: 20%;
+        max-width: 20%;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        margin-top: 5px;
+        margin-right: 5px;
+        margin-right: 5px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    .LogBtn:hover{
+        font-size: 1.2rem;
+    }
+    .LogBtn{
+        text-decoration: none;
+        color: white;
+    }
+    .NavLinks{
+        text-decoration: none;
+        color: white;
+    }
+    .logo{
+        align-self: relative;
+        width: 75px;
+        height: 75px;
+        margin-right: 20px;
+        
+    }
+    .header{
+        position: relative;
+        background-color: #1d2a42;
+        padding: 20px;
+        color: white;
+        grid-area: h;
+
+    }
+    
+    .content{
+        padding: 15px;
+        h3{
+            color: #1d2a42;
+        }
+        h2{
+            color: #1d2a42;
+        }
+        text-align: justify;
+        font-size: 1.2rem;
+        grid-area: c;
+    }
+    .footer{
+        grid-area : f;
+    }
+    .Navbar{
+        display: flex; 
+        justify-content: center; 
+        height: 30px;
+        gap : 1px;
+        margin-top: 0;
+        grid-area: n;
+        border-width: 1px solid black;
+    }
+    .Navbuttons{
+        min-width: 33.3%;
+        max-width: 33.3%;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        height: 40px;
+        margin-top: 1px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+    }
+    .Navbuttons:hover{
+        font-size: 16px;
+    }
+    .NavLinks{
+        text-decoration: none;
+        color: white;
+    }
+    .img1 {
+        width: 100%;
+        height: auto;
+        float: left;
+    }
+    .img2 {
+
+        width: 100%;
+        margin-top: 0.5cm;
+        height: auto;
+    }
+    .footer{
+        grid-area : f;
+        background-color: rgb(22, 21, 21);
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        .ErasmusLogo{
+            width: 120px;
+            height: auto;
+            margin: 20px;
+        }
+        .uoplogo{
+            width: auto;
+            height: auto;
+            margin: 20px;
+        }
+    }
+    .News{
+        grid-area: N;
+        width: 100%;
+        box-shadow: 0px 20px 10px rgb(218, 218, 218);
+    }
+    .NewsTitle{
+        text-align: center;
+        color: #1d2a42;
+        font-size: 1.3rem;
+    }
+    .NewsContent{
+        text-align: center;
+        color: #920000;
+        font-size: 1.1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 5px;
+    }
+    .video{
+        width: 100%;
+        height: auto;
+        margin-top: 1cm;
+        margin-bottom: 1cm;
+        box-shadow: 0px 0px 10px rgb(168, 168, 168);
+    }
+   
+}
+
+

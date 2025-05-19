@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements</title>
+    <link rel="stylesheet" href="../styles/reqs.css">
+    <link rel="stylesheet" href="../styles/forms.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="../media/uoplogo.png" alt="Logo" class="logo">
+            <h1>Erasmus Portal</h1>
+            
+        </div>
+        <div class="content">
+            <h1>Ελάχιστες Απαιτήσεις για Συμμετοχή στο Πρόγραμμα Erasmus</h1>
+
+            <p>Παρακάτω παρουσιάζονται οι κατ’ ελάχιστον απαιτήσεις που πρέπει να πληροί ένας/μία φοιτητής/φοιτήτρια 
+            για να έχει δικαίωμα συμμετοχής στο πρόγραμμα Erasmus.</p>
+
+            <table class="requirements-table" border="1">
+                <tr>
+                    <th>Απαιτήσεις</th>
+                    <th>Περιγραφή</th>
+                </tr>
+                <tr>
+                    <td>Τρέχον έτος σπουδών</td>
+                    <td>Μεγαλύτερο ή ίσο του 2ου έτους</td>
+                </tr>
+                <tr>
+                    <td>Ποσοστό περασμένων μαθημάτων έως το προηγούμενο έτος σπουδών </td>
+                    <td>Μεγαλύτερο ή ίσο του 70% του συνόλου των μαθημάτων</td>
+                </tr>
+                <tr>
+                    <td>Μέσος όρος των «περασμένων» μαθημάτων έως το προηγούμενο έτος σπουδών</td>
+                    <td>Μεγαλύτερος ή ίσος του 6.50</td>
+                </tr>
+                <tr>
+                    <td>Πιστοποιητικό γνώσης της αγγλικής γλώσσας</td>
+                    <td>Κατ’ ελάχιστον «καλή
+                        γνώση της αγγλικής γλώσσας», που αντιστοιχεί σε επίπεδο B2 ή ανώτερο</td>
+                </tr>
+            </table>
+            <form class="reqs-form">
+                <h2>Φόρμα αυτόματου ελέγχου πληρότητας των ελάχιστων απαιτήσεων.</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td><label for="1">1.</label></td>
+                        <td><select id="year" name="year">
+                            <option value="1" disabled selected>Επιλέξτε έτος σπουδών</option>
+                            <option value="2">1ο Έτος</option>
+                            <option value="3">2ο Έτος</option>
+                            <option value="4">3ο Έτος</option>
+                            <option value="5">4ο Έτος</option>
+                            <option value="6">Μεγαλύτερο</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="2">2.</label></td>
+                        <td><input type="number" min="0" max="100" id="passed_courses" name="passed_courses" placeholder="Ποσοστό περασμένων μαθημάτων"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="3">3.</label></td>
+                        <td><input type="number" min="0" max="10" id="average" name="average" placeholder="Μέσος όρος περασμένων μαθημάτων"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="4">4.</label></td>
+                        <td>Πιστοποιητικό της αγγλικής γλώσσας:</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <label for="A1">A1:</label>
+                            <input type="radio" id="english" name="english" value="A1" class="radios">
+                            <label for="A2">A2:</label>
+                            <input type="radio" id="english" name="english" value="A2" class="radios"><br>
+                            <label for="B1">B1:</label>
+                            <input type="radio" id="english" name="english" value="B1" class="radios">
+                            <label for="B2">B2:</label>
+                            <input type="radio" id="english" name="english" value="B2"  class="radios"><br>
+                            <label for="C1">C1:</label>
+                            <input type="radio" id="english" name="english" value="C1" class="radios">
+                            <label for="C2">C2:</label>
+                            <input type="radio" id="english" name="english" value="C2" class="radios"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">
+                            <button type="submit" class="submit-button">Υποβολή</button>
+                        </td>
+                    </tr>
+                      
+                </table>
+            </form>
+            
+        </div>
+        <div class="footer">
+            <img src="../media/LogoFooter.png" alt="Logo" class="uoplogo">
+            <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
+        </div>
+        <div class="NewsBar" >
+            <select name="documents" id="documents" class="More-select" onchange="window.open(this.value, '_blank')">
+                <option value="0" disabled selected>Ενημερωτικό Υλικό</option>
+                <option value="../media/ErasmusplusProgramme-Guide2023-v3_en.pdf">Erasmus Guide</option>
+                <option value="../media/ΕΠΙΧΟΡΗΓΗΣΗ ΦΟΙΤΗΤΩΝ ΓΙΑ ΣΠΟΥΔΕΣ ΚΑΙ ΠΡΑΚΤΙΚΗ ΑΣΚΗΣΗ.pdf">Επιχορήγηση Φοιτητών</option>
+                <option value="../media/Χάρτης φοιτητών erasmus_0.pdf">Χάρτης φοιτητών Erasmus</option>
+                <option value="../media/Erasmus_IKY_INEDIVIM-Flyer_online.pdf">Γενικά για το πρόγραμμα</option>
+            </select>
+            <p>Παραπάνω θα βρείτε επιπλέον Ενημερωτικό Υλικό σχετικα με το προγραμμα erasmus και τις απαιτήσεις</p>
+        </div>
+        
+    </div>
+</body>
+</html>

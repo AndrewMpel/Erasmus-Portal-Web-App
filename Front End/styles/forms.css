@@ -1,0 +1,579 @@
+form input[type="radio"]{
+    cursor: pointer;
+    margin-bottom: 10px ;
+    
+}
+form input[type="text"]::placeholder{
+    color: white;
+}
+form input[type="text"],form input[type="email"],
+form input[type="email"]:hover,form input[type="password"],
+form input[type="number"],form input[type="file"],
+form input[type="number"]:focus,select{
+    box-shadow: inset 0px 0px 5px black;
+}
+form input[type="text"]:hover,form input[type="password"]:hover,
+form input[type="number"]:hover,form input[type="file"]:hover,
+select:hover{
+    background-color: #24385c;
+}
+form input[type="number"]::placeholder,form input[type="text"]::placeholder,
+form input[type="email"]::placeholder,form input[type="password"]::placeholder{
+    color: white;
+}
+form input[type="number"]:focus::placeholder,form input[type="password"]:focus::placeholder,
+form input[type="text"]:focus::placeholder,form input[type="email"]:focus::placeholder{
+    color: transparent;
+}
+.form-table td{
+    text-align: left;
+    justify-content: left;
+}
+
+@media screen and (min-width: 1024px){
+    .Sup-form{
+        border-radius: 5px;
+        padding: 30px;
+        margin-top: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .Sup-form h1{
+        font-size: 2.2rem;
+        color: #1d2a42;
+    }
+    .Sup-form h4{
+        font-size: 1.3rem;
+    }
+    .form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 1cm 2cm 1cm 2cm;
+        border-radius: 5px;
+        margin: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .reqs-form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 1cm 2cm 1cm 2cm;
+        border-radius: 5px;
+        margin-top: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 0px 0px 40px rgb(192, 192, 192);
+    }
+    .reqs-table{
+        width: 100%;
+        justify-self: center;
+        display: table;
+        margin: 0 auto;
+        padding: 1cm 0.5cm 0.5cm 0.5cm;
+
+        
+    }
+    .reqs-table td{
+        min-width: 1cm;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    .form-table{
+        width: 100%;
+        justify-self: center;
+        display: table;
+        margin: 0 auto;
+        padding: 0.5cm 0.5cm 0.5cm 0.5cm;
+
+        
+    }
+    .form-table td{
+        min-width: 1cm;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    input[type="radio"]{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+    form select{
+        width: 15cm;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .More-select{
+        width: 100%;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    form label{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    form input[type="number"]{
+        width: 15cm;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+    
+    form input[type="text"]{
+        width: 15cm;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+    form input[type="email"]{
+        width: 15cm;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="password"]{
+        width: 15cm;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="file"]{
+        width: 15cm;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="file"]::file-selector-button{
+        background-color: #1d2a42;
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    form input[type="checkbox"]{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    form input[type="checkbox"]:checked{
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    
+}
+@media screen and (min-width: 600px) and (max-width: 1024px){
+    .Sup-form{
+        width: auto ;
+        border-radius: 5px;
+        padding: 1cm;
+        margin-top: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .reqs-form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 30px;
+        border-radius: 5px;
+        background-color: whitesmoke;
+        
+    }
+    .reqs-form h2{
+        font-size: 1.3rem;
+        margin: 20px 0;
+        color: #1d2a42;
+    }
+    .reqs-table{
+        width: 100%;
+        justify-self: center;
+        display: table;
+        margin: 0 auto;
+        padding: 1cm 0.5cm 0.5cm 0.5cm;
+
+        
+    }
+    .reqs-table td{
+        min-width: 1cm;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    .form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 1cm 0cm 1cm 0cm;
+        border-radius: 5px;
+        margin: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .form-table{
+        display: table;
+        margin: 0 auto;
+    }
+    .form-table td{
+        min-width: 0.5cm;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    input[type="radio"]{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+    form select{
+        width: 10cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .More-select{
+        width: 100%;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    form label{
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    form input[type="number"]{
+        width: 10cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+    form input[type="text"]{
+        width: 10cm;
+        box-sizing: border-box;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+    form input[type="email"]{
+        width: 10cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="password"]{
+        width: 10cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="file"]{
+        width: 10cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="file"]::file-selector-button{
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        padding-top: 5px; 
+    }
+}
+@media screen and (max-width: 600px){
+    .Sup-form{
+        border-radius: 5px;
+        padding: 1cm;
+        margin-top: 1cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .reqs-form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 30px;
+        border-radius: 5px;
+        background-color: whitesmoke;
+    }
+    .reqs-form h2{
+        font-size: 1.3rem;
+        margin: 20px 0;
+        color: #1d2a42;
+    }
+    .reqs-table{
+        width: 100%;
+        justify-self: center;
+        align-self: center;
+
+        
+    }
+    .reqs-table td{
+        min-width: 1cm;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    .form{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0.5cm 0.5cm 0.5cm 0.5cm;
+        border-radius: 5px;
+        background-color: whitesmoke;
+    }
+    .form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px;
+    }
+    .form-table{
+        display: table;
+        margin: 0 auto;
+    }
+    .form-table td{
+        min-width: 1cm;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    input[type="radio"]{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+    }
+    form select{
+        width: 8cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .More-select{
+        width: 100%;
+        height: 45px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+    form label{
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #1d2a42;
+    }
+    form input[type="number"]{
+        width: 8cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+    form input[type="text"]{
+        width: 8cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+    form input[type="email"]{
+        width: 8cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="password"]{
+        width: 8cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    form input[type="file"]{
+        width: 8cm;
+        height: 35px;
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        padding-top: 5px;
+    }
+    form input[type="file"]::file-selector-button{
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    form input[type="checkbox"]{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    form input[type="checkbox"]:checked{
+        background-color: #1d2a42;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+}
