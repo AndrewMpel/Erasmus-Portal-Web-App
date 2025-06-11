@@ -221,7 +221,6 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         font-size: 1rem;
         cursor: pointer;
     }
-    
 }
 @media screen and (min-width: 600px) and (max-width: 1024px){
     .Sup-form{

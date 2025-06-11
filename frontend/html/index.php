@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +11,24 @@
 </head>
 <body>
     <div class="container">
+        
         <div class="LogButtons">
-            <button class="LogBtn"><a href="../html/login.html" class="NavLinks">Log In</a></button>
-            <button class="LogBtn"><a href="../html/sign-up.html" class="NavLinks">Sign Up</a></button>
+            <?php if (isset($_SESSION['username'])): ?>
+                <!-- <button class="LogBtn">
+                    <a href="../../backend/logout.php" class="NavLinks">Log Out</a>
+                </button> -->
+                <a href="../html/profile.php"><img src="../media/pfp.png" class="pfp"></a>
+                <button class="LogBtn">
+                    <a href="../html/sign-up.html" class="NavLinks">Sign Up</a>
+                </button>
+            <?php else: ?>
+                <button class="LogBtn">
+                    <a href="../html/login.html" class="NavLinks">Log In</a>
+                </button>
+                <button class="LogBtn">
+                    <a href="../html/sign-up.html" class="NavLinks">Sign Up</a>
+                </button>
+            <?php endif; ?>
         </div>
         <div class="header">
             <img src="../media/uoplogo.png" alt="Logo" class="logo">
@@ -18,10 +36,23 @@
             
         </div>
         <div class="Navbar">
+            <button class="Navbuttons"><a href="../html/index.php" class="NavLinks">Αρχική</a></button>
             <button class="Navbuttons"><a href="../html/reqs.html" class="NavLinks">Απαιτήσεις</a></button>
-            <button class="Navbuttons"><a href="../html/application.html" class="NavLinks">Αίτηση</a></button>
+            <button class="Navbuttons"><a href="../html/application.php" class="NavLinks">Αίτηση</a></button>
             <button class="Navbuttons"><a href="../html/more.html" class="NavLinks">Περισσότερα</a></button>
-        
+            <?php 
+                include '../../backend/db.php';
+                $sql = "SELECT * FROM users WHERE is_admin = 1";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        if (isset($_SESSION['username']) && $_SESSION['username'] == $row['username']) {
+                           echo '<button class="Navbuttons"><a href="../html/admin.php" class="NavLinks">Διαχείριση</a></button>';
+                            break;
+                        }
+                    }
+                }
+            ?>
         </div>
         <div class="content">
             <h2>Καλώς ήρθατε στην Πύλη Erasmus</h2>

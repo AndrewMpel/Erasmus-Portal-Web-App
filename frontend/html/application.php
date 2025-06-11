@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+
+    if(!isset($_SESSION['username'])){
+        header("Location: ../html/login.html");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +23,7 @@
         </div>
         <div class="content">
             
-            <form class="form">
+            <form class="form"  method="post" action="../../backend/application.php" enctype="multipart/form-data">
                 <h1>Αίτηση για συμμετοχή στο πρόγραμμα Erasmus</h1>
                 <table class="form-table">
                     <tr>
@@ -74,9 +81,9 @@
                         <td></td>
                         <td>
                             <label for="Yes">Ναί:</label>
-                            <input type="radio" id="Languages" name="Languages" value="Yes" class="radios">
+                            <input type="radio" id="Languages" name="languages" value="Yes" class="radios">
                             <label for="No">Όχι:</label>
-                            <input type="radio" id="Languages" name="Languages" value="No" class="radios"><br>
+                            <input type="radio" id="Languages" name="languages" value="No" class="radios"><br>
                         </td>
                     </tr>
                     <tr>

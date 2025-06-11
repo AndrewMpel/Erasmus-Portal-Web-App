@@ -1,0 +1,145 @@
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"],
+form input[type="file"],
+select {
+    width: 100%;
+    max-width: 400px;
+    height: 45px;
+    background-color: #1d2a42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 5px black;
+}
+
+form input::placeholder {
+    color: white;
+}
+
+form input:focus::placeholder {
+    color: transparent;
+}
+
+.form-table td {
+    text-align: left;
+    font-weight: bold;
+    color: #1d2a42;
+    padding: 5px;
+}
+
+.submit-button {
+    background-color: #1d2a42;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    max-width: 400px;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #002874;
+    transition: 0.3s;
+}
+
+.nums {
+    font-weight: bold;
+    color: #1d2a42;
+}
+@media screen and (min-width: 1024px) {
+    .nums {
+        font-size: 1.5rem;
+    }
+
+    .Sup-form {
+        border-radius: 5px;
+        padding: 30px;
+        margin-top: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+
+    .Sup-form h1 {
+        font-size: 1.5rem;
+        color: #1d2a42;
+    }
+
+    .Sup-form h4 {
+        font-size: 1.3rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        margin: 2cm auto;
+        max-width: 700px;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: 5px 10px 30px black;
+    }
+
+    .form-table {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1023px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        margin: 2rem;
+        max-width: 90%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+        box-shadow: 5px 10px 30px black;
+    }
+
+    .form-table {
+        width: 100%;
+    }
+
+    .form-table td {
+        font-size: 1rem;
+    }
+
+    .nums {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 599px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem;
+        width: 100%;
+        background-color: whitesmoke;
+        border-radius: 5px;
+    }
+
+    .form-table {
+        width: 100%;
+    }
+
+    .form-table td {
+        font-size: 1rem;
+    }
+
+    .nums {
+        font-size: 1.3rem;
+    }
+}

@@ -45,6 +45,22 @@ body {
             "f f f f f f f f f f"; 
         grid-gap: 0px;       
     }
+    .Admin{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: 
+            "l l l l l l l l l l"
+            "h h h h h h h h h h"
+            "n n c c c c c c c c"
+            "n n c c c c c c c c"
+            "n n c c c c c c c c"
+            "n n c c c c c c c c"
+            "f f f f f f f f f f"; 
+        grid-gap: 0px;
+    }
     .News{
         grid-area: N;
         width: 100%;
@@ -91,7 +107,16 @@ body {
         grid-area: n;
         margin-top: 0;
     }
-
+    .pfp{
+        width: 45px;
+        height: auto;
+        margin-right: 5%;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .pfp:hover{
+        width: 50px;
+    }
     .Navbuttons {
         width: 100%;
         background-color: #1d2a42;
@@ -218,6 +243,7 @@ body {
                              "f f f f f f f f f f"; 
         grid-gap: 0px;       
     }
+    
     .LogButtons{
         grid-area: l;
         height: 30px;
@@ -293,14 +319,23 @@ body {
         display: flex; 
         justify-content: center; 
         gap : 1px;
-        
+        width: 100%;
         margin-top: 0;
         grid-area: n;
         border-width: 1px solid black;
     }
+    .pfp{
+        width: 45px;
+        height: auto;
+        margin-right: 5%;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .pfp:hover{
+        width: 50px;
+    }
     .Navbuttons{
-        min-width: 33.3%;
-        max-width: 33.3%;
+        flex:1;
         background-color: #1d2a42;
         color: white;
         border: none;
@@ -308,6 +343,7 @@ body {
         margin-top: 1px;
         border-radius: 5px;
         font-size: 1.1rem;
+        box-sizing: border-box;
     }
     .Navbuttons:hover{
         font-size: 16px;
@@ -467,15 +503,24 @@ body {
     .Navbar{
         display: flex; 
         justify-content: center; 
-        height: 30px;
         gap : 1px;
+        width: 100%;
         margin-top: 0;
         grid-area: n;
         border-width: 1px solid black;
     }
+    .pfp{
+        width: 45px;
+        height: auto;
+        margin-right: 5%;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .pfp:hover{
+        width: 50px;
+    }
     .Navbuttons{
-        min-width: 33.3%;
-        max-width: 33.3%;
+        flex:1;
         background-color: #1d2a42;
         color: white;
         border: none;
@@ -483,6 +528,7 @@ body {
         margin-top: 1px;
         border-radius: 5px;
         font-size: 1.1rem;
+        box-sizing: border-box;
     }
     .Navbuttons:hover{
         font-size: 16px;

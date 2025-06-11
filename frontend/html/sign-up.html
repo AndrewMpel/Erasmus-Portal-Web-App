@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
         </div>
         <div class="Sup-content">
             
-            <form class="Sup-form">
+            <form class="Sup-form" id="signform" method="post" action="../../backend/Register.php">
                 <h1>Sign up</h1>
                 <h4>Συμπληρώστε τα παρακάτω στοιχεία για να εγγραφείτε</h4>
                 <h4>Έχετε ήδη εγγραφεί? <a style="text-decoration: none; color:#1d2a42" href="../html/login.html">Sign in</a> </h4>
@@ -43,10 +44,10 @@
                         <td><input type="password" id="password" name="password" placeholder="password" required></td>
                     </tr>
                     <tr>
-                        <td><input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm password" required></td>
+                        <td><input type="password" id="confpsw" name="confirm_password" placeholder="Confirm password" required></td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-align: right;"><input type="submit" class="submit-button"value="Sign Up"></td>
+                        <td colspan="2" style="text-align: right;"><input type="submit" class="submit-button"value="Sign Up" name="SignUp" onclick="subbut()"></td>
                     </tr>
 
                 </table>
