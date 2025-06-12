@@ -25,7 +25,7 @@ body{
     text-align: right;
 }
 
-.requirements-table td:hover {background-color: #1d2a42; color: whitesmoke;}
+.requirements-table td:hover {background-color: #1c5150; color: whitesmoke;}
 
 @media screen and (min-width: 1024px){
     .container {
@@ -76,14 +76,14 @@ body{
     }
     .NewsBar h2{
         padding-top: 0.5cm;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .header {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 20px;
         color: white;
         grid-area: h;
@@ -113,7 +113,7 @@ body{
     }
     .content h1{
         font-size: 1.8rem;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .content p{
         font-size: 1.3rem;
@@ -164,7 +164,7 @@ body{
 
     }
     .submit-button{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -180,14 +180,14 @@ body{
     }
     .english{
         font-size: 1rem;
-        color: #1d2a42;
+        color: #1c5150;
         margin: 0px 0px 0px 20px;
     }
     .radios{
         cursor: pointer;
         margin: 0px 20px 0px 0px;
         font-size: 1.2rem;
-        color: #1d2a42;
+        color: #1c5150;
         user-select: none;
     }
     
@@ -221,14 +221,14 @@ body{
     }
     .NewsBar h2{
         font-size: 1.3rem;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .header {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 20px;
         color: white;
         grid-area: h;
@@ -252,10 +252,10 @@ body{
     .content h1{
         font-size: 1.4rem;
         margin: 20px 0;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .content h3{
-        color: #1d2a42;
+        color: #1c5150;
     };
     .content p{
         font-size: 1.2rem;
@@ -307,7 +307,7 @@ body{
     }
     
     .submit-button{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -323,21 +323,21 @@ body{
     }
     .english{
         font-size: 0.8rem;
-        color: #1d2a42;
+        color: #1c5150;
         margin: 0px 0px 0px 20px;
     }
     .radios{
         cursor: pointer;
         margin: 0px 20px 0px 0px;
         font-size: 0.8rem;
-        color: #1d2a42;
+        color: #1c5150;
         user-select: none;
     }
     h4{
         font-size: 1.2rem;
     }
     
-    .requirements-table td:hover {background-color: #1d2a42; color: whitesmoke;}
+    .requirements-table td:hover {background-color: #1c5150; color: whitesmoke;}
 }
 @media screen and (max-width: 600px){
     .container {
@@ -366,14 +366,14 @@ body{
     }
     .NewsBar h2{
         font-size: 1.3rem;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .header {
         display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 20px;
         color: white;
         grid-area: h;
@@ -400,7 +400,7 @@ body{
     .content h1{
         font-size: 1.4rem;
         margin: 20px 0;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .content p{
         font-size: 1.1rem;
@@ -408,7 +408,7 @@ body{
         text-align: justify;
     }
     .content h3{
-        color: #1d2a42;
+        color: #1c5150;
     };
     .requirements-table{
         max-width: 100%;
@@ -454,7 +454,7 @@ body{
     }
     
     .submit-button{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -470,14 +470,14 @@ body{
     }
     .english{
         font-size: 0.8rem;
-        color: #1d2a42;
+        color: #1c5150;
         margin: 0px 0px 0px 20px;
     }
     .radios{
         cursor: pointer;
         margin: 0px 20px 0px 0px;
         font-size: 0.8rem;
-        color: #1d2a42;
+        color: #1c5150;
         user-select: none;
     }
     h4{
@@ -485,5 +485,5 @@ body{
     }
     
     
-    .requirements-table td:hover {background-color: #1d2a42; color: whitesmoke;}
+    .requirements-table td:hover {background-color: #1c5150; color: whitesmoke;}
 }

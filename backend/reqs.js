@@ -1,46 +1,66 @@
+const form = document.querySelector(".reqs-form");
+const year = document.getElementById("year");
+const passedCourses = document.getElementById("passed_courses");
+const average = document.getElementById("average");
+const englishRadios = document.querySelectorAll('input[name="english"]');
 
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".reqs-form");
-    const messageBox = document.getElementById("messageBox");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    checkValues();
+});
 
+function checkValues() {
+    const yearValue = parseInt(year.value);
+    const passedCoursesValue = parseInt(passedCourses.value);
+    const averageValue = parseFloat(average.value);
+    const englishLevel = document.querySelector('input[name="english"]:checked');
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    const englishMap = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 };
+    const requiredEnglish = 4;
 
-        const year = parseInt(document.getElementById("year").value);
-        const passedCourses = parseInt(document.getElementById("passed_courses").value);
-        const average = parseFloat(document.getElementById("average").value);
-        const englishLevel = document.querySelector('input[name="english"]:checked');
+    if (isNaN(yearValue) || yearValue < 2) {
+        showError(year, "Το έτος πρέπει να είναι τουλάχιστον το 2ο");
+    } else {
+        showSuccess(year);
+    }
 
-        const englishMap = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5, C2: 6 };
-        const requiredEnglish = 4;
+    if (isNaN(passedCoursesValue) || passedCoursesValue < 70) {
+        showError(passedCourses, "Το ποσοστό περασμένων μαθημάτων πρέπει να είναι τουλάχιστον 70%");
+    } else {
+        showSuccess(passedCourses);
+    }
 
-        let errors = [];
+    if (isNaN(averageValue) || averageValue < 6.5) {
+        showError(average, "Ο μέσος όρος πρέπει να είναι τουλάχιστον 6.50");
+    } else {
+        showSuccess(average);
+    }
 
-        if (isNaN(year) || year <= 2) {
-            errors.push("Το έτος σπουδών πρέπει να είναι τουλάχιστον 2ο.");
-        }
+    const englishContainer = englishRadios[0].closest(".form-control");
+    const small = englishContainer.querySelector("small");
+    if (!englishLevel || englishMap[englishLevel.value] < requiredEnglish) {
+        small.innerText = "Το επίπεδο αγγλικών πρέπει να είναι τουλάχιστον B2.";
+        englishContainer.className = "form-control error";
+    } else {
+        small.innerText = "";
+        englishContainer.className = "form-control success";
+    }
+}
 
-        if (isNaN(passedCourses) || passedCourses < 70) {
-            errors.push("Το ποσοστό περασμένων μαθημάτων πρέπει να είναι τουλάχιστον 70%.");
-        }
+function showError(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+    if (small) {
+        small.innerText = message;
+        formControl.className = "form-control error";
+    }
+}
 
-        if (isNaN(average) || average < 6.5) {
-            errors.push("Ο μέσος όρος πρέπει να είναι τουλάχιστον 6.50.");
-        }
-
-        if (!englishLevel || englishMap[englishLevel.value] < requiredEnglish) {
-            errors.push("Το επίπεδο αγγλικών πρέπει να είναι τουλάχιστον B2.");
-        }
-
-        if (errors.length > 0) {
-            messageBox.className = "message-box  message-error";
-            messageBox.innerHTML = "❌ Δεν πληρούνται οι απαιτήσεις:<br><ul>" + errors.map(e => `<li>${e}</li>`).join('') + "</ul>";
-        } else {
-           messageBox.className = "message-box message-success";
-            messageBox.innerHTML = "✅ Πληροίτε όλες τις ελάχιστες απαιτήσεις για το πρόγραμμα Erasmus!";
-        }
-    })
-})
-
-
+function showSuccess(input) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+    if (small) {
+        small.innerText = "";
+        formControl.className = "form-control success";
+    }
+}

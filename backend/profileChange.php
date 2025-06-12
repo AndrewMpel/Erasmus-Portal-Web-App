@@ -36,7 +36,7 @@
                 if (mysqli_query($conn, $update_sql)) {
                     header("location: ../frontend/html/profile.php");
                 } else {
-                    echo "Σφάλμα: " . mysqli_error($conn);
+                    header("location: ../frontend/html/failure.php");
                 }
             } else {
                 echo "Δεν έκανες καμία αλλαγή";

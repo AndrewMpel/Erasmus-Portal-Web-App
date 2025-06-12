@@ -3,6 +3,41 @@ form input[type="radio"]{
     margin-bottom: 10px ;
     
 }
+.form-control small {
+    visibility: hidden;
+    color: red;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.form-control.success input,
+.form-control.success select {
+    border-color: green;
+    border-width: 3px;
+    background-color:#3d976d ;
+    transition: 0.3s;
+}
+
+.form-control.error input,
+.form-control.error select {
+    border-color: red;
+    border-width: 3px;
+    background-color: #bd2e2e;
+    transition: 0.4s;
+}
+
+.form-control.error input:hover,
+.form-control.error select:hover {
+    border-color: red;
+    border-width: 3px;
+    background-color: #bd2e2e;
+    transition: 0.4s;
+}
+
 form input[type="text"]::placeholder{
     color: white;
 }
@@ -13,9 +48,10 @@ form input[type="number"]:focus,select{
     box-shadow: inset 0px 0px 5px black;
 }
 form input[type="text"]:hover,form input[type="password"]:hover,
-form input[type="number"]:hover,form input[type="file"]:hover,
+form input[type="number"]:hover,form input[type="file"]:hover,form input[type="email"]:hover,
 select:hover{
-    background-color: #24385c;
+    background-color: #329997;
+    transition: 0.3s;
 }
 form input[type="number"]::placeholder,form input[type="text"]::placeholder,
 form input[type="email"]::placeholder,form input[type="password"]::placeholder{
@@ -40,7 +76,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     }
     .Sup-form h1{
         font-size: 2.2rem;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .Sup-form h4{
         font-size: 1.3rem;
@@ -82,7 +118,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         min-width: 1cm;
         font-size: 1.3rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .form-table{
         width: 100%;
@@ -97,7 +133,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         min-width: 1cm;
         font-size: 1.3rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     input[type="radio"]{
         cursor: pointer;
@@ -107,9 +143,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form select{
         width: 15cm;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -119,9 +154,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     .More-select{
         width: 100%;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -132,14 +166,13 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form label{
         font-size: 1.5rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     form input[type="number"]{
         width: 15cm;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -151,9 +184,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="text"]{
         width: 15cm;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -164,9 +196,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="email"]{
         width: 15cm;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -176,9 +207,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="password"]{
         width: 15cm;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -188,9 +218,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="file"]{
         width: 15cm;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -198,10 +227,9 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         margin-bottom: 10px;
     }
     form input[type="file"]::file-selector-button{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 10px;
         color: white;
-        border: none;
         border-radius: 5px;
         text-align: center;
         font-size: 1rem;
@@ -213,7 +241,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         cursor: pointer;
     }
     form input[type="checkbox"]:checked{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -245,7 +273,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     .reqs-form h2{
         font-size: 1.3rem;
         margin: 20px 0;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .reqs-table{
         width: 100%;
@@ -260,7 +288,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         min-width: 1cm;
         font-size: 1.3rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .form{
         justify-content: center;
@@ -282,7 +310,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         min-width: 0.5cm;
         font-size: 1rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     input[type="radio"]{
         cursor: pointer;
@@ -292,7 +320,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form select{
         width: 10cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -304,7 +332,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     .More-select{
         width: 100%;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -316,12 +344,12 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form label{
         font-size: 1.4rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     form input[type="number"]{
         width: 10cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -335,7 +363,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         width: 10cm;
         box-sizing: border-box;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -348,7 +376,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="email"]{
         width: 10cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -360,7 +388,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="password"]{
         width: 10cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -372,7 +400,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="file"]{
         width: 10cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -382,7 +410,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         margin-bottom: 10px;
     }
     form input[type="file"]::file-selector-button{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -413,7 +441,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     .reqs-form h2{
         font-size: 1.3rem;
         margin: 20px 0;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .reqs-table{
         width: 100%;
@@ -426,7 +454,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         min-width: 1cm;
         font-size: 1.3rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     .form{
         justify-content: center;
@@ -453,7 +481,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         min-width: 1cm;
         font-size: 1rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     input[type="radio"]{
         cursor: pointer;
@@ -463,7 +491,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form select{
         width: 8cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -475,7 +503,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     .More-select{
         width: 100%;
         height: 45px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -487,12 +515,12 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form label{
         font-size: 1.3rem;
         font-weight: bold;
-        color: #1d2a42;
+        color: #1c5150;
     }
     form input[type="number"]{
         width: 8cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -505,7 +533,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="text"]{
         width: 8cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -518,7 +546,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="email"]{
         width: 8cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -530,7 +558,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="password"]{
         width: 8cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -542,7 +570,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="file"]{
         width: 8cm;
         height: 35px;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -553,7 +581,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         padding-top: 5px;
     }
     form input[type="file"]::file-selector-button{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;
@@ -567,7 +595,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         cursor: pointer;
     }
     form input[type="checkbox"]:checked{
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         border-radius: 5px;

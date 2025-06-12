@@ -147,7 +147,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <input type="file" id="file" name="language_certificate2" accept=".pdf, .doc, .docx" class="file-input" required>
+                            <input type="file" id="file" name="language_certificate2" accept=".pdf, .doc, .docx" class="file-input">
                         </td>
                     </tr>
                     <tr>
