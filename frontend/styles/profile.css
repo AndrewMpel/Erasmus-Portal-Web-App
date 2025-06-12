@@ -8,7 +8,7 @@ select {
     width: 100%;
     max-width: 400px;
     height: 45px;
-    background-color: #1d2a42;
+    background-color: #1c5150;
     color: white;
     border: none;
     border-radius: 5px;
@@ -19,7 +19,15 @@ select {
     box-sizing: border-box;
     box-shadow: inset 0px 0px 5px black;
 }
-
+form input[type="text"]:hover,
+form input[type="email"]:hover,
+form input[type="password"]:hover,
+form input[type="number"]:hover,
+form input[type="file"]:hover,
+select:hover{
+    background-color: #329997;
+    transition: 0.3s;
+}
 form input::placeholder {
     color: white;
 }
@@ -31,12 +39,12 @@ form input:focus::placeholder {
 .form-table td {
     text-align: left;
     font-weight: bold;
-    color: #1d2a42;
+    color: #1c5150;
     padding: 5px;
 }
 
 .submit-button {
-    background-color: #1d2a42;
+    background-color: #1c5150;
     color: white;
     border: none;
     border-radius: 5px;
@@ -48,13 +56,13 @@ form input:focus::placeholder {
 }
 
 .submit-button:hover {
-    background-color: #002874;
+    background-color: #329997;
     transition: 0.3s;
 }
 
 .nums {
     font-weight: bold;
-    color: #1d2a42;
+    color: #1c5150;
 }
 @media screen and (min-width: 1024px) {
     .nums {
@@ -71,7 +79,7 @@ form input:focus::placeholder {
 
     .Sup-form h1 {
         font-size: 1.5rem;
-        color: #1d2a42;
+        color: #1c5150;
     }
 
     .Sup-form h4 {

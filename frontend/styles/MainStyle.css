@@ -61,6 +61,34 @@ body {
             "f f f f f f f f f f"; 
         grid-gap: 0px;
     }
+    .Status{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: 
+            "h h h h h h h h h h"
+            "h h h h h h h h h h"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "f f f f f f f f f f"; 
+        grid-gap: 0px;
+    }
+    .box{
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 50%;
+        padding: 1cm 2cm 1cm 2cm;
+        border-radius: 5px;
+        margin: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
     .News{
         grid-area: N;
         width: 100%;
@@ -71,7 +99,7 @@ body {
     }
     .NewsTitle{
         text-align: center;
-        color: #1d2a42;
+        color: #1c5150;
         font-size: 1.3rem;
     }
     .NewsContent{
@@ -87,12 +115,12 @@ body {
     }
     .header {
         position: relative;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 20px;
         color: white;
         grid-area: h;
     }
-
+    
     .header h1 {
         text-shadow: 4px 4px 5px black;
         text-align: center;
@@ -108,18 +136,19 @@ body {
         margin-top: 0;
     }
     .pfp{
-        width: 45px;
+        width: 60px;
         height: auto;
         margin-right: 5%;
         border-radius: 50%;
         margin-top: 10px;
     }
     .pfp:hover{
-        width: 50px;
+        width: 65px;
+        transition: 0.3s;
     }
     .Navbuttons {
         width: 100%;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         margin-top: 3px;
@@ -128,10 +157,11 @@ body {
         font-weight: bold;
     }
 
-    .Navbuttons:hover {
+    .Navbuttons:hover{
         font-size: 1.2rem;
+        background-color: #329997;
+        transition: 0.5s;
     }
-
     .NavLinks {
         text-decoration: none;
         color: white;
@@ -147,13 +177,13 @@ body {
     }
 
     .content h2, .content h3 {
-        color: #1d2a42;
+        color: #1c5150;
     }
     .LogButtons{
         grid-area: l;
-        height: 30px;
+        height: 40px;
         width: 100%;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         justify-content: right;
         border: none;
         display: flex;
@@ -163,20 +193,19 @@ body {
     .LogBtn{
         min-width: 3cm;
         max-width: 3cm;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         margin-top: 5px;
         margin-right: 5px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: white;
         font-weight: bold;
     }
     .LogBtn:hover{
-        font-size: 1.2rem;
-    }
-    .LogBtn{
-        text-decoration: none;
-        color: white;
+        font-size: 1.3rem;
+        transition: 0.5s;
     }
     .NavLinks{
         text-decoration: none;
@@ -243,12 +272,40 @@ body {
                              "f f f f f f f f f f"; 
         grid-gap: 0px;       
     }
+    .Status{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: 
+            "h h h h h h h h h h"
+            "h h h h h h h h h h"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "f f f f f f f f f f"; 
+        grid-gap: 0px;
+    }
+    .box{
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 50%;
+        padding: 1cm 2cm 1cm 2cm;
+        border-radius: 5px;
+        margin: 2cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
     
     .LogButtons{
         grid-area: l;
-        height: 30px;
+        height: 40px;
         width: 100%;
-        background-color: #1d2a42;;
+        background-color: #1c5150;;
         justify-content: right;
         border: none;
         display: flex;
@@ -258,22 +315,18 @@ body {
     .LogBtn{
         min-width: 15%;
         max-width: 15%;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         margin-top: 5px;
         margin-right: 5px;
-        font-size: 14px;
-        margin-right: 5px;
         font-size: 1.2rem;
         font-weight: bold;
+        text-decoration: none;
     }
     .LogBtn:hover{
         font-size: 1.3rem;
-    }
-    .LogBtn{
-        text-decoration: none;
-        color: white;
+        transition: 0.3s;
     }
     .NavLinks{
         text-decoration: none;
@@ -293,7 +346,7 @@ body {
     }
     .header{
         position: relative;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 20px;
         color: white;
         grid-area: h;
@@ -303,10 +356,10 @@ body {
         padding: 20px;
         font-size: 1.2rem;
         h3{
-            color: #1d2a42;
+            color: #1c5150;
         }
         h2{
-            color: #1d2a42;
+            color: #1c5150;
         }
         grid-area: c;
         text-align: justify;
@@ -325,18 +378,19 @@ body {
         border-width: 1px solid black;
     }
     .pfp{
-        width: 45px;
+        width: 60px;
         height: auto;
         margin-right: 5%;
         border-radius: 50%;
         margin-top: 10px;
     }
     .pfp:hover{
-        width: 50px;
+        width: 65px;
+        transition: 0.3s;
     }
     .Navbuttons{
         flex:1;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         height: 40px;
@@ -346,7 +400,9 @@ body {
         box-sizing: border-box;
     }
     .Navbuttons:hover{
-        font-size: 16px;
+        font-size: 1.2rem;
+        background-color: #329997;
+        transition: 0.5s;
     }
     .NavLinks{
         text-decoration: none;
@@ -390,7 +446,7 @@ body {
         box-shadow: 0px 20px 10px rgb(218, 218, 218);
         .NewsTitle{
             text-align: center;
-            color: #1d2a42;
+            color: #1c5150;
             font-size: 1.4rem;
         }
         .NewsContent{
@@ -430,16 +486,44 @@ body {
                              "f f f f f f f f f f"; 
         grid-gap: 0px;       
     }
+    .Status{
+        max-width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: minmax(0px, auto);        
+        grid-template-areas: 
+            "h h h h h h h h h h"
+            "h h h h h h h h h h"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "c c c c c c c c c c"
+            "f f f f f f f f f f"; 
+        grid-gap: 0px;
+    }
+    .box{
+        justify-self: center;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 80%;
+        padding: 0.5cm 1cm 0.5cm 1cm;
+        border-radius: 5px;
+        margin: 0.5cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
     .header h1 {
         text-shadow: 4px 4px 5px black;
         text-align: center;
-        font-size: 30px
+        font-size: 35px
     }
     .LogButtons{
         grid-area: l;
-        height: 30px;
+        height: 40px;
         width: 100%;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         justify-content: right;
         border: none;
         display: flex;
@@ -449,17 +533,18 @@ body {
     .LogBtn{
         min-width: 20%;
         max-width: 20%;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         margin-top: 5px;
         margin-right: 5px;
         margin-right: 5px;
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         font-weight: bold;
     }
     .LogBtn:hover{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        transition: 0.5s;
     }
     .LogBtn{
         text-decoration: none;
@@ -471,14 +556,14 @@ body {
     }
     .logo{
         align-self: relative;
-        width: 75px;
-        height: 75px;
+        width: 100px;
+        height: 100px;
         margin-right: 20px;
         
     }
     .header{
         position: relative;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         padding: 20px;
         color: white;
         grid-area: h;
@@ -488,10 +573,10 @@ body {
     .content{
         padding: 15px;
         h3{
-            color: #1d2a42;
+            color: #1c5150;
         }
         h2{
-            color: #1d2a42;
+            color: #1c5150;
         }
         text-align: justify;
         font-size: 1.2rem;
@@ -510,28 +595,31 @@ body {
         border-width: 1px solid black;
     }
     .pfp{
-        width: 45px;
+        width: 60px;
         height: auto;
         margin-right: 5%;
         border-radius: 50%;
         margin-top: 10px;
     }
     .pfp:hover{
-        width: 50px;
+        width: 65px;
+        transition: 0.5s;
     }
     .Navbuttons{
         flex:1;
-        background-color: #1d2a42;
+        background-color: #1c5150;
         color: white;
         border: none;
         height: 40px;
         margin-top: 1px;
         border-radius: 5px;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         box-sizing: border-box;
     }
     .Navbuttons:hover{
-        font-size: 16px;
+        font-size: 1.3rem;
+        background-color: #329997;
+        transition: 0.5s;
     }
     .NavLinks{
         text-decoration: none;
@@ -573,7 +661,7 @@ body {
     }
     .NewsTitle{
         text-align: center;
-        color: #1d2a42;
+        color: #1c5150;
         font-size: 1.3rem;
     }
     .NewsContent{

@@ -18,7 +18,7 @@ if (isset($_POST['SignUp'])) {
         $insertQuery = "INSERT INTO users (name, surname, student_id, email, phone, username, password)
                         VALUES ('$name', '$surname', '$am', '$email', '$phone', '$username', '$password')";
         if ($conn->query($insertQuery) === TRUE) {
-            header("Location: ../frontend/html/index.php");
+            header("Location: ../frontend/html/Success.php");
             exit();
         } else {
             echo "Error: " . $conn->error;

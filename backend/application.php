@@ -22,7 +22,7 @@
     $result = $x->get_result();
 
     if ($row = $result->fetch_assoc()) {
-        die("Έχετε ήδη υποβάλει αιτηση");
+       header("location: ../frontend/html/failure.php");
     } else {
         $uploadDir = __DIR__ . '/Files/';
         if (!is_dir($uploadDir)) {
@@ -72,9 +72,9 @@
         );
         if ($x->execute()) {
             echo "Η αίτηση υποβλήθηκε";
-            header("location: ../frontend/html/return.php");
+            header("location: ../frontend/html/Success.php");
         } else {
-            echo "Σφάλμα: " . $x->error;
+            header("location: ../frontend/html/failure.php");
         }
         
         $x->close();
