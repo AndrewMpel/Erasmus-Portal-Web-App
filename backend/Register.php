@@ -39,13 +39,16 @@ if (isset($_POST['LogIn'])) {
         if (password_verify($password, $row['password'])) {
             session_start();
             $_SESSION['username'] = $row['username'];
+            $_SESSION['name'] = $row['name'];
+            $_SESSION['surname'] = $row['surname'];
+            $_SESSION['AM'] = $row['student_id'];
             header("Location: ../frontend/html/index.php");
             exit();
         } else {
             echo "Incorrect password.";
         }
     } else {
-        echo "Username not found.";
+          header("location: ../frontend/html/failure.php");
     }
 }
 ?>

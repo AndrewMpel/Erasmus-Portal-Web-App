@@ -3,6 +3,7 @@
 
     if(!isset($_SESSION['username'])){
         header("Location: ../html/login.html");
+        exit();
     }
 ?>
 <!DOCTYPE html>
@@ -27,21 +28,24 @@
                 <h1>Αίτηση για συμμετοχή στο πρόγραμμα Erasmus</h1>
                 <table class="form-table">
                     <tr>
-                        <td><label for="1" class="nums">1.</label></td>
+                        <td><label class="nums">1.</label></td>
                         <td>
-                            <input type="text" id="name" name="name" placeholder="Όνομα" required>
+                            <input type="text" id="name" name="name" placeholder="Όνομα"
+                            value="<?php echo $_SESSION['name']?>" disabled required>
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="2" class="nums">2.</label></td>
+                        <td><label class="nums">2.</label></td>
                         <td>
-                            <input type="text" id="surname" name="surname" placeholder="Επώνυμο" required>
+                            <input type="text" id="surname" name="surname" placeholder="Επώνυμο"
+                            value="<?php echo $_SESSION['surname'] ?>" disabled required>
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="3" class="nums">3.</label></td>
+                        <td><label class="nums">3.</label></td>
                         <td>
-                            <input type="text" id="AM" name="AM" placeholder="Αριθμός Μητρώου" required>
+                            <input type="text" id="AM" name="AM" placeholder="Αριθμός Μητρώου"
+                            value="<?php echo $_SESSION['AM']?>" disabled required>
                         </td>
                     </tr>
 
@@ -89,35 +93,65 @@
                     <tr>
                         <td><label for="8" class="nums">8.</label></td>
                         <td><select id="1st-Choice" name="1st-Choice" required>
-                            <option value="1" disabled selected>Πανεπιστήμιο - 1η επιλογή</option>
-                            <option value="2">Univeristy of Genova - Ιταλία &#127470;&#127481;</option>
-                            <option value="3">Univeristy of Cyprus - Κύπρος &#127464;&#127486;</option>
-                            <option value="4">Univeristy of Vigo - Ισπανία &#127466;&#127480;</option>
-                            <option value="5">Politehnica University of Bucharest - Ρουμανία &#127479;&#127476; </option>
-                            <option value="6">University of Rijeka - Κροατία &#127469;&#127479;</option>
+                            <option value="0" disabled selected>Πανεπιστήμιο - 1η επιλογή</option>
+                            <?php
+                                include '../../backend/db.php';
+                                $sql = "SELECT * FROM universities";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<option value=\"" . $row['id'] . "\">" . htmlspecialchars($row['name']." - ").htmlspecialchars($row['country']) . "</option>";
+                                        
+                                    }      
+                                } else {
+                                    echo "<option value=\"1\">" ."Δεν υπάρχουν διαθέσιμα πανεπιστήμια" ."</option>";
+                                }
+                            ?>
                         </select></td>
 
                     </tr>
                     <tr>
                         <td><label for="9" class="nums">9.</label></td>
                         <td><select id="2nd-Choice" name="2nd-Choice" required>
-                            <option value="1" disabled selected>Πανεπιστήμιο - 2η επιλογή</option>
-                            <option value="2">Univeristy of Genova - Ιταλία &#127470;&#127481;</option>
-                            <option value="3">Univeristy of Cyprus - Κύπρος &#127464;&#127486;</option>
-                            <option value="4">Univeristy of Vigo - Ισπανία &#127466;&#127480;</option>
-                            <option value="5">Politehnica University of Bucharest - Ρουμανία &#127479;&#127476; </option>
-                            <option value="6">University of Rijeka - Κροατία &#127469;&#127479;</option>
+                            <option value="0" disabled selected>Πανεπιστήμιο - 2η επιλογή</option>
+                            <?php
+                                include '../../backend/db.php';
+                                $sql = "SELECT * FROM universities";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<option value=\"" . $row['id'] . "\">" . htmlspecialchars($row['name']." - ").htmlspecialchars($row['country']) . "</option>";
+                                        
+                                    }      
+                                } else {
+                                    echo "<option value=\"1\">" ."Δεν υπάρχουν διαθέσιμα πανεπιστήμια" ."</option>";
+                                }
+                            ?>
                         </select></td>
                     </tr>
                     <tr>
                         <td><label for="10" class="nums">10.</label></td>
                         <td><select id="3rd-Choice" name="3rd-Choice" required>
-                            <option value="1" disabled selected>Πανεπιστήμιο - 3η επιλογή</option>
-                            <option value="2">Univeristy of Genoa - Ιταλία &#127470;&#127481;</option>
-                            <option value="3">Univeristy of Cyprus - Κύπρος &#127464;&#127486;</option>
-                            <option value="4">Univeristy of Vigo - Ισπανία &#127466;&#127480;</option>
-                            <option value="5">Politehnica University of Bucharest - Ρουμανία &#127479;&#127476; </option>
-                            <option value="6">University of Rijeka - Κροατία &#127469;&#127479;</option>
+                            <option value="0" disabled selected>Πανεπιστήμιο - 3η επιλογή</option>
+                            <?php
+                                include '../../backend/db.php';
+                                $sql = "SELECT * FROM universities";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<option value=\"" . $row['id'] . "\">" . htmlspecialchars($row['name']." - ").htmlspecialchars($row['country']) . "</option>";
+                                        
+                                    }      
+                                } else {
+                                    echo "<option value=\"1\">" ."Δεν υπάρχουν διαθέσιμα πανεπιστήμια" ."</option>";
+                                }
+                            ?>
                         </select></td>
                     </tr>
                     <tr>

@@ -56,8 +56,8 @@
         </div>
         <div class="content">
             <h1 style="text-align:center;">Διαχείρηση</h1>
-            <form class="form">
-                <h2>Περιοδος δηλώσεων<h2>
+            <form class="form" method="post">
+                <h2>Περιοδος δηλώσεων</h2>
                 <table class="reqs-table">
                     <tr>
                         <td><input type="text" id="start" name="start" placeholder="Αρχή" ></td>
@@ -69,6 +69,57 @@
                         </td>
                     </tr>
                       
+                </table>
+                <h2>Δηλώσεις</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td>
+                           <select id="filter" name="filter">
+                                <option value="1" disabled selected>Φιλτρο</option>
+                                <option value="2">Εμφάνιση όλων κατά φθίνουσα σειρά</option>
+                                <option value="3">Καθορισμός ελάχιστου ποσοστού επιτυχίας</option>
+                                <option value="4">Έμφάνιση αιτήσεων συγκεκριμένού πανεπιστημίου</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="filterText" name="filterText" placeholder="..." ></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align:center;" >
+                            <button type="submit" class="submit-button" name="showApp">Εμφάνιση Δηλώσεων</button>
+                        </td>
+                    </tr>
+                    <?php
+                        include '../../backend/db.php';
+                        if(isset($_POST['showApp'])){
+                             $sql = "SELECT 
+                                    applications.*, 
+                                    users.name, 
+                                    users.surname 
+                                FROM applications
+                                INNER JOIN users ON applications.user_id = users.id";
+
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    echo "<table class='requirements-table' border=\"1\">";
+                                    echo "<tr><th>Όνομα</th><th>Επίθετο</th><th>Μέσος Όρος</th><th>Επιπεδο Αγγλικών</th><th>Αλλη Γλώσσα</th></tr>";
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['surname']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['average']) . "</td>";
+                                        echo "<td>" . htmlspecialchars($row['english_level']) . "</td>";
+                                        echo "<td>". htmlspecialchars($row["other_langs"]) . "</td>";
+
+                                        echo "</tr>";
+                                    }
+                                    echo "</table>";
+                                } else {
+                                    echo "<p>Δεν υπάρχουν αιτήσεις.</p>";
+                                }
+                        }
+                       
+                    ?>
                 </table>
             </form>
         </div>

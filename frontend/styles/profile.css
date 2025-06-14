@@ -6,7 +6,7 @@ form input[type="number"],
 form input[type="file"],
 select {
     width: 100%;
-    max-width: 400px;
+    max-width: auto;
     height: 45px;
     background-color: #1c5150;
     color: white;
@@ -19,6 +19,21 @@ select {
     box-sizing: border-box;
     box-shadow: inset 0px 0px 5px black;
 }
+select {
+    max-width: 100%;
+}
+
+.requirements-table {
+        justify-self: center;
+        width: 80%;
+        margin: 0px 20px 20px 20px;
+        border-collapse: collapse;
+    }
+    .requirements-table td {
+        text-align: left;
+        font-size: 1.2rem;
+        padding: 2px 10px 2px 10px;
+    }
 form input[type="text"]:hover,
 form input[type="email"]:hover,
 form input[type="password"]:hover,
@@ -41,6 +56,7 @@ form input:focus::placeholder {
     font-weight: bold;
     color: #1c5150;
     padding: 5px;
+    max-width: 80%;
 }
 
 .submit-button {
@@ -49,9 +65,11 @@ form input:focus::placeholder {
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
+    height: 45px;
     font-size: 1.2rem;
     cursor: pointer;
     max-width: 400px;
+    margin-bottom: 10px;
     width: 100%;
 }
 

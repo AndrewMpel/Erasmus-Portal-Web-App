@@ -54,9 +54,9 @@
         $average = $_POST['average'];
         $english = $_POST['english'];
         $languages = $_POST['languages'];
-        $firstChoice = $_POST['1st-Choice'];
-        $secondChoice = $_POST['2nd-Choice'];
-        $thirdChoice = $_POST['3rd-Choice'];
+        $firstChoice = (int)$_POST['1st-Choice'];
+        $secondChoice = (int)$_POST['2nd-Choice'];
+        $thirdChoice = (int)$_POST['3rd-Choice'];
         $agree = isset($_POST['Agree']) ? 1 : 0;
 
         $x = $conn->prepare("INSERT INTO applications (
@@ -65,7 +65,7 @@
             grade_file, english_file, otherlangs_file, terms
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $x->bind_param("idddsssssssi",
+        $x->bind_param("idddsiiisssi",
             $user_id, $passed_courses, $average, $english, $languages,
             $firstChoice, $secondChoice, $thirdChoice,
             $gradesPath, $languageCertPath, $languageCert2Path, $agree

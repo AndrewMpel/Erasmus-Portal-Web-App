@@ -266,14 +266,15 @@ body{
         max-width: 100%;
         margin: 0px 20px 20px 20px;
         border-collapse: collapse;
-        td{
+        
+        
+    }
+    td{
             min-width: 50%;
             text-align: left;
             font-size: 1.1rem;
             padding: 2px 10px 2px 10px;
         }
-        
-    }
     
     .footer{
         grid-area : f;
@@ -392,10 +393,8 @@ body{
     .content{
         grid-area: c;
         width: 100%;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         text-align: center;
-        
-       
     }
     .content h1{
         font-size: 1.4rem;
@@ -410,17 +409,17 @@ body{
     .content h3{
         color: #1c5150;
     };
-    .requirements-table{
-        max-width: 100%;
+    .requirements-table {
+        justify-self: center;
+        width: 80%;
         margin: 0px 20px 20px 20px;
         border-collapse: collapse;
-        
-        td{
-            min-width: 50%;
-            text-align: left;
-            font-size: 1.1rem;
-            padding: 2px 10px 2px 10px;
-        }
+    }
+    .requirements-table td {
+        min-width: 50%;
+        text-align: left;
+        font-size: 1.2rem;
+        padding: 2px 10px 2px 10px;
     }
     .footer{
         grid-area : f;

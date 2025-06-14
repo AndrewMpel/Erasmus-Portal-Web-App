@@ -229,6 +229,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     form input[type="file"]::file-selector-button{
         background-color: #1c5150;
         padding: 10px;
+        height: 45px;
+        border: none;
         color: white;
         border-radius: 5px;
         text-align: center;

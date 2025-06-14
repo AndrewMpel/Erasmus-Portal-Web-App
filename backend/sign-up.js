@@ -9,8 +9,6 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const confpsw = document.getElementById("confpsw");
 
-const formMessage = document.getElementById("formMessage");
-
 function isOnlyDigit(str) {
     for (let ch of str) {
         if (ch < '0' || ch > '9') {
@@ -20,62 +18,75 @@ function isOnlyDigit(str) {
     return true;
 }
 
-function showMessage(message, isError = true) {
-    formMessage.style.display = "block";
-    formMessage.style.whiteSpace = "pre-line";
-    formMessage.textContent = message;
-    if (isError) {
-        formMessage.classList.add("error");
-        formMessage.classList.remove("success");
-    } else {
-        formMessage.classList.add("success");
-        formMessage.classList.remove("error");
+function showError(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+    if (small) {
+        small.innerText = message;
+        formControl.className = "form-control error";
     }
 }
 
-function validateForm(event) {
-    formMessage.style.display = "none";
-    formMessage.textContent = "";
+function showSuccess(input) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");
+    if (small) {
+        small.innerText = "";
+        formControl.className = "form-control success";
+    }
+}
 
-    let errors = [];
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const isValid = validateForm();
+    if (isValid) {
+        form.submit();
+    }
+});
 
-    
-    for (let ch of surname.value.trim()) {
-        if (!isNaN(ch) && ch !== " ") {
-            errors.push("❌ Το επώνυμο δεν πρέπει να περιέχει αριθμούς.");
-            break;
-        }
+function validateForm() {
+    let isValid = true;
+
+    if (/\d/.test(surname.value.trim())) {
+        showError(surname, "Το επώνυμο δεν πρέπει να περιέχει αριθμούς.");
+        isValid = false;
+    } else {
+        showSuccess(surname);
     }
 
-    
-    for (let ch of name.value.trim()) {
-        if (!isNaN(ch) && ch !== " ") {
-            errors.push("❌ Το όνομα δεν πρέπει να περιέχει αριθμούς.");
-            break;
-        }
+    if (/\d/.test(name.value.trim())) {
+        showError(name, "Το όνομα δεν πρέπει να περιέχει αριθμούς.");
+        isValid = false;
+    } else {
+        showSuccess(name);
     }
 
-    
     if (AM.value.length !== 13 || !AM.value.startsWith("2022") || !isOnlyDigit(AM.value)) {
-        errors.push("❌ Ο Αριθμός Μητρώου πρέπει να έχει 13 ψηφία και να ξεκινάει με 2022.");
+        showError(AM, "Ο Αριθμός Μητρώου πρέπει να έχει 13 ψηφία και να ξεκινάει με 2022.");
+        isValid = false;
+    } else {
+        showSuccess(AM);
     }
 
-    
     if (phone.value.length !== 10 || !isOnlyDigit(phone.value)) {
-        errors.push("❌ Το τηλέφωνο πρέπει να έχει ακριβώς 10 ψηφία.");
+        showError(phone, "Το τηλέφωνο πρέπει να έχει ακριβώς 10 ψηφία.");
+        isValid = false;
+    } else {
+        showSuccess(phone);
     }
 
-    
     if (
         !email.value.includes("@") ||
         !email.value.includes(".") ||
         email.value.startsWith("@") ||
         email.value.endsWith("@")
     ) {
-        errors.push("❌ Μη έγκυρο email.");
+        showError(email, "Μη έγκυρο email.");
+        isValid = false;
+    } else {
+        showSuccess(email);
     }
 
-    
     const specialChars = "!@#$%^&*()_+-=[]{};:'\"\\|,.<>/?";
     let hasSpecial = false;
     for (let ch of password.value) {
@@ -84,20 +95,19 @@ function validateForm(event) {
             break;
         }
     }
+
     if (password.value.length < 5 || !hasSpecial) {
-        errors.push("❌ Ο κωδικός πρέπει να έχει τουλάχιστον 5 χαρακτήρες και έναν ειδικό χαρακτήρα.");
+        showError(password, "Ο κωδικός πρέπει να έχει τουλάχιστον 5 χαρακτήρες και έναν ειδικό χαρακτήρα.");
+        isValid = false;
+    } else {
+        showSuccess(password);
     }
 
-   
     if (password.value !== confpsw.value) {
-        errors.push("❌ Τα πεδία password και confirm password δεν ταιριάζουν.");
+        showError(confpsw, "Τα πεδία password και confirm password δεν ταιριάζουν.");
+        isValid = false;
+    } else {
+        showSuccess(confpsw);
     }
-
-
-    if (errors.length > 0) {
-        event.preventDefault();
-        showMessage(errors.join("\n"), true); 
-    }
+    return isValid;
 }
-
-form.addEventListener("submit", validateForm);
