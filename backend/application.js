@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.form');
 
-  // Fix: select the first passed_courses input inside the form to avoid duplicate id issue
   const passedCourses = form.querySelector('input#passed_courses');
   const totalCourses = document.getElementById('total_courses');
   const percentage = document.getElementById('percentage');
