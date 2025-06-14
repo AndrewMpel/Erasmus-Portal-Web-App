@@ -30,6 +30,7 @@
                     <tr>
                         <td><label class="nums">1.</label></td>
                         <td>
+                            <br>
                             <input type="text" id="name" name="name" placeholder="Όνομα"
                             value="<?php echo $_SESSION['name']?>" disabled required>
                         </td>
@@ -37,6 +38,7 @@
                     <tr>
                         <td><label class="nums">2.</label></td>
                         <td>
+                            <br>
                             <input type="text" id="surname" name="surname" placeholder="Επώνυμο"
                             value="<?php echo $_SESSION['surname'] ?>" disabled required>
                         </td>
@@ -44,26 +46,63 @@
                     <tr>
                         <td><label class="nums">3.</label></td>
                         <td>
+                            <br>
                             <input type="text" id="AM" name="AM" placeholder="Αριθμός Μητρώου"
                             value="<?php echo $_SESSION['AM']?>" disabled required>
                         </td>
                     </tr>
 
+
+                        <tr>
+                        <td><label for="passed_courses" class="nums">4a.</label></td>
+                        <td>
+                            <div class="form-control">
+                            <small>Error message</small><br>
+                            <input type="number" id="passed_courses" name="passed_courses" min="0" placeholder="Πλήθος περασμένων μαθημάτων">
+                            
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td><label for="total_courses" class="nums">4b.</label></td>
+                        <td>
+                            <div class="form-control">
+                            <small>Error message</small><br>
+                            <input type="number" id="total_courses" name="total_courses" min="1" placeholder="Συνολικός αριθμός μαθημάτων" >
+                            
+                            </div>
+                        </td>
+                        </tr>
+                        <tr>
+
+                        <td><label class="nums">4c.</label></td>
+                        <td>
+                            <div class="form-control">
+                            <small>Error message</small><br>
+                            <input type="text" id="percentage" name="percentage" placeholder="Ποσοστό περασμένων μαθημάτων (%)" readonly>
+                            </div>
+                        </td>
+                        </tr>
+
                     <tr>
-                        <td><label for="4" class="nums">4.</label></td>
-                        <td><input type="number" min="0" max="100" id="passed_courses" name="passed_courses" placeholder="Ποσοστό περασμένων μαθημάτων" required></td>
+                        <td><label for="5" class="nums">6.</label></td>
+                        <td>
+                        <div class="form-control" >
+                            <small>Error message</small> <br>
+                          <input type="number" min="0" max="10" id="average" name="average" step="0.01" placeholder="Μέσος όρος περασμένων μαθημάτων" >
+                             
+                        </div>
+                         </td>
                     </tr>
                     <tr>
-                        <td><label for="5" class="nums">5.</label></td>
-                        <td><input type="number" min="0" max="10" id="average" name="average" placeholder="Μέσος όρος περασμένων μαθημάτων" required></td>
-                    </tr>
-                    <tr>
-                        <td><label for="6" class="nums">6.</label></td>
+                        <td><label for="6" class="nums">7.</label></td>
                         <td>Πιστοποιητικό της αγγλικής γλώσσας:</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
+                            <div class="form-control" >
+                            <small>Error message</small><br>
                             <label for="A1">A1:</label>
                             <input type="radio" id="english" name="english" value="A1" class="radios">
                             <label for="A2">A2:</label>
@@ -76,23 +115,32 @@
                             <input type="radio" id="english" name="english" value="C1" class="radios">
                             <label for="C2">C2:</label>
                             <input type="radio" id="english" name="english" value="C2" class="radios"><br>
+                            
+                            </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="7" class="nums">7.</label></td>
+                        <td><label for="7" class="nums">8.</label></td>
                         <td>Γνώση επιπλέον ξένων γλωσσών:</td>
                     </tr>
                         <td></td>
                         <td>
+                            <div class="form-control" >
+                            <small>Error message</small><br>
                             <label for="Yes">Ναί:</label>
                             <input type="radio" id="Languages" name="languages" value="Yes" class="radios">
                             <label for="No">Όχι:</label>
                             <input type="radio" id="Languages" name="languages" value="No" class="radios"><br>
+                            
+                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="8" class="nums">8.</label></td>
-                        <td><select id="1st-Choice" name="1st-Choice" required>
+                        <td><label for="8" class="nums">9.</label></td>
+                        <td>
+                            <div class="form-control">
+                            <small>Error message</small><br>
+                            <select id="1st-Choice" name="1st-Choice" required>
                             <option value="0" disabled selected>Πανεπιστήμιο - 1η επιλογή</option>
                             <?php
                                 include '../../backend/db.php';
@@ -109,12 +157,17 @@
                                     echo "<option value=\"1\">" ."Δεν υπάρχουν διαθέσιμα πανεπιστήμια" ."</option>";
                                 }
                             ?>
-                        </select></td>
+                        </select>
+                        </div>
+                    </td>
 
                     </tr>
                     <tr>
-                        <td><label for="9" class="nums">9.</label></td>
-                        <td><select id="2nd-Choice" name="2nd-Choice" required>
+                        <td><label for="9" class="nums">10.</label></td>
+                        <td>
+                            <div class="form-control">
+                             <small>Error message</small><br> 
+                        <select id="2nd-Choice" name="2nd-Choice" >
                             <option value="0" disabled selected>Πανεπιστήμιο - 2η επιλογή</option>
                             <?php
                                 include '../../backend/db.php';
@@ -131,11 +184,17 @@
                                     echo "<option value=\"1\">" ."Δεν υπάρχουν διαθέσιμα πανεπιστήμια" ."</option>";
                                 }
                             ?>
-                        </select></td>
+                         </select>
+                          
+                         </div>
+                    </td>
                     </tr>
                     <tr>
-                        <td><label for="10" class="nums">10.</label></td>
-                        <td><select id="3rd-Choice" name="3rd-Choice" required>
+                        <td><label for="10" class="nums">11.</label></td>
+                        <td>
+                        <div class="form-control" >
+                          <small>Error message</small> <br>  
+                        <select id="3rd-Choice" name="3rd-Choice" >
                             <option value="0" disabled selected>Πανεπιστήμιο - 3η επιλογή</option>
                             <?php
                                 include '../../backend/db.php';
@@ -152,46 +211,66 @@
                                     echo "<option value=\"1\">" ."Δεν υπάρχουν διαθέσιμα πανεπιστήμια" ."</option>";
                                 }
                             ?>
-                        </select></td>
+                        </select>
+                         
+                        </div>
+                    </td>
                     </tr>
                     <tr>
-                        <td><label for="11" class="nums">11.</label></td>
+                        <td><label for="11" class="nums">12.</label></td>
                         <td>Ανέβασμα Αναλυτικής Βαθμολογίας:</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <input type="file" id="file" name="grades" accept=".pdf, .doc, .docx" class="file-input" required>
+                            <div class="form-control" > 
+                            <small>Error message</small> <br>  
+                            <input type="file" id="file" name="grades" accept=".pdf, .doc, .docx" class="file-input" >
+                           
+                            </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="12" class="nums">12.</label></td>
+                        <td><label for="12" class="nums">13.</label></td>
                         <td>Ανέβασμα Πτυχίου αγγλικής γλώσσας:</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <input type="file" id="file" name="language_certificate" accept=".pdf, .doc, .docx" class="file-input" required>
+                          <div class="form-control" >
+                            <small>Error message</small> <br>  
+                            <input type="file" id="file" name="language_certificate" accept=".pdf, .doc, .docx" class="file-input" >
+                          </div>
                         </td>
                     </tr>
+
                     <tr>
-                        <td><label for="13" class="nums">13.</label></td>
+                        <td><label for="13" class="nums">14.</label></td>
                         <td>Ανέβασμα Πτυχίων άλλων γλωσσών:</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
+                            <div class="form-control" >
+
+                            <small>Error message</small><br>  
                             <input type="file" id="file" name="language_certificate2" accept=".pdf, .doc, .docx" class="file-input">
+                           
+                           </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="14" class="nums">14.</label></td>
+                        <td><label for="14" class="nums">15.</label></td>
                         <td>
+                            <div class="form-control" >
+                                <small>Error message</small> <br>  
                                 Αποδοχή Όρων:
-                                <input type="checkbox" id="Agree" name="Agree" required>
-    
+                                <input type="checkbox" id="Agree" name="Agree" require>
+                           </div>
                         </td>
                     </tr>
+
+
                     <tr>
                         <td colspan="2" style="text-align: right;">
                             <button type="submit" class="submit-button">Υποβολή</button>
@@ -199,6 +278,7 @@
                     </tr>
                       
                 </table>
+                <script src="../../backend/application.js"></script>
             </form>
         </div>
         <div class="footer">

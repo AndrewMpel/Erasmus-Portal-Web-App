@@ -37,6 +37,11 @@ form input[type="radio"]{
     background-color: #bd2e2e;
     transition: 0.4s;
 }
+.form-control.error input[type="file"]::file-selector-button{
+    border-width: 3px;
+    background-color: #ff0000;
+    transition: 0.4s;
+}
 
 form input[type="text"]::placeholder{
     color: white;
@@ -230,7 +235,6 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         background-color: #1c5150;
         padding: 10px;
         height: 45px;
-        border: none;
         color: white;
         border-radius: 5px;
         text-align: center;

@@ -50,7 +50,7 @@
         $languageCertPath = handleUpload('language_certificate', $uploadDir);
         $languageCert2Path = handleUpload('language_certificate2', $uploadDir);
 
-        $passed_courses = $_POST['passed_courses'];
+        $passed_courses = $_POST['percentage'];
         $average = $_POST['average'];
         $english = $_POST['english'];
         $languages = $_POST['languages'];
