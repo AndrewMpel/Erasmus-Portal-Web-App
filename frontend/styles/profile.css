@@ -23,7 +23,6 @@ select {
     max-width: 100%;
 }
 .form-control small {
-    visibility: hidden;
     color: red;
     font-size: 1rem;
     text-align: left;
