@@ -278,7 +278,7 @@
                     </tr>
                       
                 </table>
-                <script src="../../backend/application.js"></script>
+                <script src="../javascript/application.js"></script>
             </form>
         </div>
         <div class="footer">

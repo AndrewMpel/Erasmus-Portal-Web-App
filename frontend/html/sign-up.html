@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="el">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,96 +12,101 @@
         <div class="header">
             <img src="../media/uoplogo.png" alt="Logo" class="logo">
             <h1>Erasmus Portal</h1>
+            
         </div>
-
         <div class="Sup-content">
+            
             <form class="Sup-form" id="signform" method="post" action="../../backend/Register.php">
                 <h1>Sign up</h1>
                 <h4>Συμπληρώστε τα παρακάτω στοιχεία για να εγγραφείτε</h4>
-                <h4>Έχετε ήδη εγγραφεί? <a style="text-decoration: none; color:#1c5150" href="../html/login.html">Sign in</a></h4>
-
+                <h4>Έχετε ήδη εγγραφεί? <a style="text-decoration: none; color:#1c5150" href="../html/login.html">Sign in</a> </h4>
                 <table class="form-table">
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
+                                <small>Error message</small><br>
                                 <input type="text" id="name" name="name" placeholder="Όνομα" required>
-                                
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
-                                <input type="text" id="surname" name="surname" placeholder="Επώνυμο" required>
-                                
+                               <small>Error message</small><br>
+                               <input type="text" id="surname" name="surname" placeholder="Επώνυμο" required>
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
+                                <small>Error message</small><br>
                                 <input type="text" id="AM" name="AM" placeholder="Αριθμός Μητρώου" required>
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
+                               <small>Error message</small><br>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
+                           
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
+                               <small>Error message</small><br>
                                 <input type="text" id="phone" name="phone" placeholder="Τηλέφωνο" required>
                             </div>
+                           
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
-                                <input type="text" id="username" name="username" placeholder="Username" required>
+                               <small>Error message</small><br>
+                               <input type="text" id="username" name="username" placeholder="username" required>
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
-                                <input type="password" id="password" name="password" placeholder="Password" required>
+                               <small>Error message</small><br>
+                               <input type="password" id="password" name="password" placeholder="password" required>
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <div class="form-control">
-                                <small></small><br>
-                                <input type="password" id="confpsw" name="confirm_password" placeholder="Confirm password" required>
+                               <small>Error message</small><br>
+                               <input type="password" id="confpsw" name="confirm_password" placeholder="Confirm password" required>
                             </div>
+                            
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-align: right;">
-                            <input type="submit" class="submit-button" value="Sign Up" name="SignUp">
-                        </td>
+                        <td colspan="2" style="text-align: right;"><input type="submit" class="submit-button"value="Sign Up" name="SignUp" ></td>
                     </tr>
-                </table>
-            </form>
-        </div>
 
+                </table>
+                <div id="formMessage" class="form-message"></div>
+            </form>
+
+        </div>
         <div class="footer">
             <img src="../media/LogoFooter.png" alt="Logo" class="uoplogo">
             <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
         </div>
     </div>
-
-    <script src="../../backend/sign-up.js"></script>
+    <script src="../javascript/sign-up.js"></script>
 </body>
 </html>

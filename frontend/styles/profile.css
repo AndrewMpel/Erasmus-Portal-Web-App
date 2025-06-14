@@ -22,7 +22,45 @@ select {
 select {
     max-width: 100%;
 }
+.form-control small {
+    visibility: hidden;
+    color: red;
+    font-size: 1rem;
+    text-align: left;
+}
 
+.form-control.error small {
+    visibility: visible;
+}
+
+.form-control.success input,
+.form-control.success select {
+    border-color: green;
+    border-width: 3px;
+    background-color:#3d976d ;
+    transition: 0.3s;
+}
+
+.form-control.error input,
+.form-control.error select {
+    border-color: red;
+    border-width: 3px;
+    background-color: #bd2e2e;
+    transition: 0.4s;
+}
+
+.form-control.error input:hover,
+.form-control.error select:hover {
+    border-color: red;
+    border-width: 3px;
+    background-color: #bd2e2e;
+    transition: 0.4s;
+}
+.form-control.error input[type="file"]::file-selector-button{
+    border-width: 3px;
+    background-color: #bd2e2e;
+    transition: 0.4s;
+}
 .requirements-table {
         justify-self: center;
         width: 80%;

@@ -63,7 +63,7 @@
         </div>
         <div class="content">
             <div class="form-wrapper">
-            <form class="form"  method="post" action="../../backend/profileChange.php">
+            <form class="form" id="profile" method="post" action="../../backend/profileChange.php">
                 <h1>Προφίλ Χρήστη</h1>
                 <table class="form-table">
                     <tr>
@@ -99,16 +99,22 @@
                         </td>
                     </tr>
                     <tr>
+                        
                         <td colspan="2" style="text-align: right;">
-                            <button type="submit" class="submit-button" name="change">Αλλαγή</button>
+                            <div class="form-control">
+                                <small id="formMessage"></small><br>
+                                <button type="submit" class="submit-button" id="change" name="change">Αλλαγή</button>
+                            </div>
                         </td>
+                        
+                            
                     </tr>
                       
                 </table>
             </form>
             </div>
         </div>
-        
+        <script src="../javascript/profile.js"></script>
         <div class="footer">
             <img src="../media/LogoFooter.png" alt="Logo" class="uoplogo">
             <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
