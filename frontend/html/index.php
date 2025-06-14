@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include '../../backend/db.php';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,25 +37,7 @@
             <h1>Erasmus Portal</h1>
             
         </div>
-        <div class="Navbar">
-            <button class="Navbuttons"><a href="../html/index.php" class="NavLinks">Αρχική</a></button>
-            <button class="Navbuttons"><a href="../html/reqs.html" class="NavLinks">Απαιτήσεις</a></button>
-            <button class="Navbuttons"><a href="../html/application.php" class="NavLinks">Αίτηση</a></button>
-            <button class="Navbuttons"><a href="../html/more.html" class="NavLinks">Περισσότερα</a></button>
-            <?php 
-                include '../../backend/db.php';
-                $sql = "SELECT * FROM users WHERE is_admin = 1";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        if (isset($_SESSION['username']) && $_SESSION['username'] == $row['username']) {
-                           echo '<button class="Navbuttons"><a href="../html/admin.php" class="NavLinks">Διαχείριση</a></button>';
-                            break;
-                        }
-                    }
-                }
-            ?>
-        </div>
+        <?php include 'NavBar.php'; ?>
         <div class="content">
             <h2>Καλώς ήρθατε στην Πύλη Erasmus</h2>
             <p>Η Πύλη Erasmus είναι εδώ για να σας βοηθήσει να ενημερωθείτε για το πρόγραμμα Erasmus και να υποβάλετε τις αιτήσεις σας για συμμετοχή. Εδώ μπορείτε να βρείτε όλες τις πληροφορίες που χρειάζεστε, από τις απαιτήσεις μέχρι τις διαδικασίες αίτησης.</p>
