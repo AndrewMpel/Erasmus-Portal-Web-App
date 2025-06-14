@@ -1,4 +1,4 @@
-<?php
+<?php   
     include 'db.php';
 
     if (isset($_POST['SignUp'])) {
@@ -9,7 +9,7 @@
         $phone = $_POST['phone'];
         $username = $_POST['username'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
+        
         $checkUser = "SELECT * FROM users WHERE username = '$username'";
         $result = $conn->query($checkUser);
         if ($result->num_rows > 0) {
@@ -21,6 +21,7 @@
                 header("Location: ../frontend/html/Success.php");
                 exit();
             } else {
+
                 echo "Error: " . $conn->error;
             }
         }

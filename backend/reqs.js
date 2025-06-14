@@ -1,3 +1,4 @@
+const form = document.querySelector(".reqs-form");
 const year = document.getElementById("year");
 const passedCourses = document.getElementById("passed_courses");
 const average = document.getElementById("average");

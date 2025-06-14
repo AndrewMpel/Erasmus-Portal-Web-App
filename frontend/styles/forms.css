@@ -39,7 +39,7 @@ form input[type="radio"]{
 }
 .form-control.error input[type="file"]::file-selector-button{
     border-width: 3px;
-    background-color: #ff0000;
+    background-color: #bd2e2e;
     transition: 0.4s;
 }
 
