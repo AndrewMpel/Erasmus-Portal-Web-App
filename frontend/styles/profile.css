@@ -152,10 +152,6 @@ form input:focus::placeholder {
         border-radius: 5px;
         box-shadow: 5px 10px 30px black;
     }
-
-    .form-table {
-        width: 100%;
-    }
 }
 @media screen and (min-width: 600px) and (max-width: 1023px) {
     .form {

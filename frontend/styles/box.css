@@ -1,0 +1,98 @@
+.uni-text:hover{
+    background-color: #329997;
+    transition: 0.3s;
+}
+.uni-text::placeholder{
+    color: white;
+}
+.uni-text:focus::placeholder{
+    color: transparent;
+}
+
+@media screen and (min-width: 1024px){
+    .uni-box{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 1cm 2cm 1cm 2cm;
+        border-radius: 5px;
+        margin: 1cm 20% 1cm 20% ;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .uni-text{
+        width: auto;
+        height: 35px;
+        background-color: #1c5150;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+        
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px){
+    .uni-box{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 1cm 0cm 1cm 0cm;
+        border-radius: 5px;
+        margin: 1cm;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .uni-text{
+        width: auto;
+        box-sizing: border-box;
+        height: 35px;
+        background-color: #1c5150;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    
+    }
+}
+@media screen and (max-width: 600px){
+    .uni-box{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 10px 0px 10px 0px;
+        border-radius: 5px;
+        margin: 20px;
+        background-color: whitesmoke;
+        box-shadow: 5px 10px 30px black;
+    }
+    .uni-text{
+        width:auto;
+        box-sizing: border-box;
+        height: 35px;
+        background-color: #1c5150;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1rem;
+        cursor: pointer;
+        margin-bottom: 10px;
+    
+    }
+    .heading{
+        font-size: 1.2rem;
+    }
+}

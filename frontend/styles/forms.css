@@ -71,6 +71,8 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
     justify-content: left;
 }
 
+
+
 @media screen and (min-width: 1024px){
     .Sup-form{
         border-radius: 5px;
@@ -116,8 +118,6 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         display: table;
         margin: 0 auto;
         padding: 1cm 0.5cm 0.5cm 0.5cm;
-
-        
     }
     .reqs-table td{
         min-width: 1cm;
@@ -450,6 +450,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         color: #1c5150;
     }
     .reqs-table{
+        display: block;
         width: 100%;
         justify-self: center;
         align-self: center;
@@ -457,6 +458,7 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         
     }
     .reqs-table td{
+        display: block;
         min-width: 1cm;
         font-size: 1.3rem;
         font-weight: bold;
@@ -468,16 +470,11 @@ form input[type="text"]:focus::placeholder,form input[type="email"]:focus::place
         display: flex;
         flex-direction: column;
         max-width: 100%;
-        padding: 0.5cm 0.5cm 0.5cm 0.5cm;
+        padding: 10px 0px 10px 0px;
         border-radius: 5px;
+        margin: 20px;
         background-color: whitesmoke;
-    }
-    .form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 10px;
+        box-shadow: 5px 10px 30px black;
     }
     .form-table{
         display: table;

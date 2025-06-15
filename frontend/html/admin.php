@@ -22,6 +22,7 @@ if ($result && $result->num_rows > 0) {
     <link rel="stylesheet" href="../styles/MainStyle.css">
     <link rel="stylesheet" href="../styles/profile.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="../styles/box.css">
 </head>
 <body>
     <div class="Admin">
@@ -61,10 +62,8 @@ if ($result && $result->num_rows > 0) {
 
         <div class="content">
             <h1 style="text-align:center;">Διαχείριση</h1>
-
-            <!-- Περίοδος Δηλώσεων -->
             <form class="form" id="periodForm" method="post" action="../../backend/AdminData.php">
-                <h2>Περίοδος Δηλώσεων</h2>
+                <h2 class="heading">Περίοδος Δηλώσεων</h2>
                 <table class="reqs-table">
                     <tr>
                         <td><input type="text" id="start" name="start" placeholder="Αρχή" value="<?php echo htmlspecialchars($startDate); ?>"></td>
@@ -78,11 +77,9 @@ if ($result && $result->num_rows > 0) {
                     </tr>
                 </table>
             </form>
-
-            <!-- Εμφάνιση Δηλώσεων -->
             <form class="form" method="post" action="admin.php"  
                 style="width: 95%; max-width: 1200px; margin: 20px auto; padding: 20px; background-color: #f8f8f8; border-radius: 10px;">
-                <h2>Δηλώσεις</h2>
+                <h2 class="heading">Δηλώσεις</h2>
                 <table class="reqs-table">
                     <tr>
                         <td>
@@ -184,6 +181,86 @@ if ($result && $result->num_rows > 0) {
                 }
                 ?>
             </form>
+            <div class="uni-box">
+                <h2 class="heading">Εισαγωγή Πανεπιστημίου</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td><input type="text" id="name" name="name" placeholder="Όνομα" class="uni-text"></td>
+                        <td><input type="text" id="country" name="country" placeholder="Χώρα" class="uni-text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button class="submit-button" onclick="createUniversity()">Εισαγωγή</button>
+                        </td>
+                    </tr>
+                </table>
+                <pre id="create-response"></pre>
+                <script src="../javascript/API.js"></script>
+            </div>
+            <div class="uni-box">
+                <h2 class="heading">Εμφάνιση πανεπιστημίου με id</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td><input type="number" id="read-id" name="id" placeholder="id" class="uni-text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button class="submit-button" onclick="getUniversityById()">Εμφάνιση</button>
+                            
+                        </td>
+                    </tr>
+                </table>
+                <pre id="read-one-response"></pre>
+                <script src="../javascript/API.js"></script>
+            </div>
+            <div class="uni-box">
+                <h2 class="heading">Τροποποιηση πανεπιστημίου με id</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td><input type="number" id="update-id" placeholder="id" class="uni-text"></td>
+                        <td><input type="text" id="update-name" placeholder="Νέο ονομα" class="uni-text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text" id="update-country" placeholder="Νέα Χώρα" class="uni-text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center;">
+                            <button class="submit-button" onclick="updateUniversity()">Τροποποιηση</button>
+                            
+                        </td>
+                    </tr>
+                </table>
+                <pre id="update-response"></pre>
+                <script src="../javascript/API.js"></script>
+            </div>
+            <div class="uni-box">
+                <h2 class="heading">Εμφάνιση όλων των πανεπιστημίων</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button class="submit-button" onclick="getAllUniversities()">Εμφάνιση</button>
+                        </td>
+                    </tr>
+                </table>
+                <pre id="read-all-response"></pre>
+                <script src="../javascript/API.js"></script>
+            </div>
+            <div class="uni-box">
+                <h2 class="heading">Διαγραφή πανεπιστημίου</h2>
+                <table class="reqs-table">
+                    <tr>
+                        <td><input type="number" id="delete-id" name="id" placeholder="id" class="uni-text"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button class="submit-button" onclick="deleteUniversity()">Διαγραφή</button>
+                            
+                        </td>
+                    </tr>
+                </table>
+                <pre id="delete-response"></pre>
+                <script src="../javascript/API.js"></script>
+            </div>
         </div>
 
         <div class="footer">
