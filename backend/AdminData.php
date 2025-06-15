@@ -1,19 +1,32 @@
 <?php
-include 'db.php';
+include 'db.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['start']) && !empty($_POST['end'])) {
         $start = $_POST['start'];
         $end = $_POST['end'];
 
-        // Διαγραφή παλιών τιμών
         $conn->query("DELETE FROM application_period");
 
-        // Εισαγωγή νέας περιόδου
+        
         $stmt = $conn->prepare("INSERT INTO application_period (`start`, `end`) VALUES (?, ?)");
-        $stmt->bind_param("ss", $start, $end);
-
-        $stmt->close();
+        
+        
+        if ($stmt) {
+            $stmt->bind_param("ss", $start, $end);
+            
+        
+            if ($stmt->execute()) {
+            
+            } else {
+                
+                echo "Error executing statement: " . $stmt->error;
+            }
+            $stmt->close();
+        } else {
+            
+            echo "Error preparing statement: " . $conn->error;
+        }
     } else {
         echo "Συμπλήρωσε και τις δύο ημερομηνίες.";
     }
