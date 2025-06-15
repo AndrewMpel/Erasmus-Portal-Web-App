@@ -20,7 +20,7 @@ if ($result && $result->num_rows > 0) {
     if ($today >= $startDate && $today <= $endDate) {
         $canApply = true;
     } else {
-        $application_message = "Η περίοδος αιτήσεων δεν είναι ενεργή αυτή τη στιγμή.";
+        $application_message = "Η περίοδος αιτήσεων θα ειναι  είναι ενεργή αυτή τη στιγμή.";
     }
 } else {
     $application_message = "Δεν έχει οριστεί ακόμη περίοδος αιτήσεων.";
