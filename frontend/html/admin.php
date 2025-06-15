@@ -145,8 +145,6 @@
             <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
         </div>
     </div>
-
-    <!-- Flatpickr & JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         flatpickr("#start", { dateFormat: "Y-m-d" });
