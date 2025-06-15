@@ -22,8 +22,7 @@ if ($result && $result->num_rows > 0) {
     } else if ($today > $endDate) {
         $application_message = "Η προθεσμία υποβολής αιτήσεων έχει λήξει στις " . $endDateStr . ".";
     } else {
-      
-        $application_message = "Η περίοδος αιτήσεων δεν είναι ενεργή αυτή τη στιγμή. (από " . $startDateStr . " έως " . $endDateStr . ").";
+
     }
 } else {
     $application_message = "Δεν έχει οριστεί ακόμη περίοδος αιτήσεων.";
@@ -76,7 +75,7 @@ if ($conn) {
         $conn->close();
     }
     ?>
-    
+
  <button class="Navbuttons"><a href="../html/more.html" class="NavLinks">Περισσότερα</a></button>
 <div style="background-color: #ffeeee; color: red; padding: 10px; border: 1px solid red; text-align: center; margin-bottom: 20px;">
         <?php echo $final_message_to_display; ?>

@@ -3,6 +3,7 @@
 
     if(!isset($_SESSION['username'])){
         header("Location: ../html/login.html");
+        exit();
     }
     require "../../backend/profileData.php";
 ?>
@@ -14,7 +15,6 @@
     <title>User Profile</title>
     <link rel="stylesheet" href="../styles/profile.css">
     <link rel="stylesheet" href="../styles/MainStyle.css">
-
 </head>
 <body>
     <div class="Admin">
@@ -39,10 +39,9 @@
         <div class="header">
             <img src="../media/uoplogo.png" alt="Logo" class="logo">
             <h1>Erasmus Portal</h1>
-
         </div>
         <div class="Navbar">
-             <button class="Navbuttons"><a href="../html/index.php" class="NavLinks">Αρχική</a></button>
+            <button class="Navbuttons"><a href="../html/index.php" class="NavLinks">Αρχική</a></button>
             <button class="Navbuttons"><a href="../html/reqs.html" class="NavLinks">Απαιτήσεις</a></button>
             <button class="Navbuttons"><a href="../html/application.php" class="NavLinks">Αίτηση</a></button>
             <button class="Navbuttons"><a href="../html/more.html" class="NavLinks">Περισσότερα</a></button>
@@ -54,7 +53,7 @@
                     while ($row = $result->fetch_assoc()) {
                         if (isset($_SESSION['username']) && $_SESSION['username'] == $row['username']) {
                            echo '<button class="Navbuttons"><a href="../html/admin.php" class="NavLinks">Διαχείριση</a></button>';
-                            break;
+                           break;
                         }
                     }
                 }
@@ -98,7 +97,12 @@
                         </td>
                     </tr>
                     <tr>
-
+                        <td><label class="nums">Κωδικός: *****</label></td>
+                        <td>
+                            <input type="password" id="password" name="password" placeholder="Νέος Κωδικός">
+                        </td>
+                    </tr>
+                    <tr>
                         <td colspan="2" style="text-align: right;">
                             <div class="form-control">
                                 <small id="formMessage"></small><br>
@@ -106,7 +110,6 @@
                             </div>
                         </td>
                     </tr>
-
                 </table>
             </form>
             </div>
@@ -116,7 +119,6 @@
             <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
         </div>
     </div>
-
 
     <script src="../javascript/profile.js"></script>
 </body>
