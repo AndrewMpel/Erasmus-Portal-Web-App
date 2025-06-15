@@ -12,6 +12,24 @@ body {
 * {
     box-sizing: border-box;
 }
+.application-status-message-container {
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 0.95em;
+    font-weight: bold;
+    line-height: 1.4;
+    width: 100%;
+    max-width: 800px;
+    flex-shrink: 0;
+    order: -1;
+    background-color: #ffe0e0;
+    color: #cc0000;
+    border-color: #ff9999;
+}
 @media screen and (min-width: 1024px) {
     .container {
         max-width: 100%;
@@ -135,6 +153,16 @@ body {
         grid-area: n;
         margin-top: 0;
     }
+    .Navbuttons {
+        width: 100%;
+        background-color: #1c5150;
+        color: white;
+        border: none;
+        margin-top: 3px;
+        height: 40px;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
     .pfp{
         width: 60px;
         height: auto;
@@ -146,17 +174,15 @@ body {
         width: 65px;
         transition: 0.3s;
     }
-    .Navbuttons {
-        width: 100%;
-        background-color: #1c5150;
-        color: white;
-        border: none;
-        margin-top: 3px;
-        height: 40px;
-        font-size: 1.1rem;
-        font-weight: bold;
+    
+    .message-box{
+        background-color: #ffeeee;
+        color: red; 
+        padding: 10px; 
+        border: 1px solid red; 
+        text-align: center; 
+        margin-bottom: 20px;
     }
-
     .Navbuttons:hover{
         font-size: 1.2rem;
         background-color: #329997;
@@ -369,23 +395,14 @@ body {
     
     .Navbar{
         display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center; 
         gap : 1px;
         width: 100%;
         margin-top: 0;
         grid-area: n;
         border-width: 1px solid black;
-    }
-    .pfp{
-        width: 60px;
-        height: auto;
-        margin-right: 5%;
-        border-radius: 50%;
-        margin-top: 10px;
-    }
-    .pfp:hover{
-        width: 65px;
-        transition: 0.3s;
     }
     .Navbuttons{
         flex:1;
@@ -398,6 +415,22 @@ body {
         font-size: 1.1rem;
         box-sizing: border-box;
     }
+    .application-status-message-container{
+        width: 100%;
+        order: 1;
+    }
+    .pfp{
+        width: 60px;
+        height: auto;
+        margin-right: 5%;
+        border-radius: 50%;
+        margin-top: 10px;
+    }
+    .pfp:hover{
+        width: 65px;
+        transition: 0.3s;
+    }
+    
     .Navbuttons:hover{
         font-size: 1.2rem;
         background-color: #329997;
@@ -571,27 +604,34 @@ body {
     
     .content{
         padding: 15px;
-        h3{
+        text-align: justify;
+        font-size: 1.1rem;
+        grid-area: c;
+    }
+    h3{
             color: #1c5150;
         }
         h2{
             color: #1c5150;
         }
-        text-align: justify;
-        font-size: 1.2rem;
-        grid-area: c;
-    }
+        
     .footer{
         grid-area : f;
     }
     .Navbar{
         display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center; 
         gap : 1px;
         width: 100%;
         margin-top: 0;
         grid-area: n;
         border-width: 1px solid black;
+    }
+    .application-status-message-container{
+        width: 100%;
+        order: 1;
     }
     .pfp{
         width: 60px;
