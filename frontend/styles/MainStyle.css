@@ -201,6 +201,11 @@ body {
         max-width: 100%;
         box-shadow: inset 0px 5px 20px rgb(187, 187, 187);
     }
+    .content h1{
+        font-size: 1.8rem;
+        text-align: center;
+        color: #1c5150;
+    }
     .content h2, .content h3 {
         color: #1c5150;
     }
@@ -388,6 +393,12 @@ body {
         }
         grid-area: c;
         text-align: justify;
+    }
+    .content h1{
+        font-size: 1.4rem;
+        margin: 20px 0;
+        text-align: center;
+        color: #1c5150;
     }
     .footer{
         grid-area : f;
@@ -614,6 +625,12 @@ body {
         h2{
             color: #1c5150;
         }
+    .content h1{
+        font-size: 1.4rem;
+        margin: 20px 0;
+        text-align: center;
+        color: #1c5150;
+    }
         
     .footer{
         grid-area : f;
