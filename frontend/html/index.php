@@ -60,6 +60,7 @@
             <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
         </div>
         <div class="News">
+            
             <h4 class="NewsTitle">Σημαντικές Ενημερώσεις</h4>
             <h5 class="NewsContent">Δεν υπάρχουν διαθέσιμες ενημερώσεις</h5>
 
