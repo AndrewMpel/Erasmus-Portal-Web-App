@@ -1,16 +1,17 @@
 <?php
-    session_start();
-    include '../../backend/db.php';
-    $startDate = "";
-    $endDate = "";
-    $sql = "SELECT start, end FROM application_period ORDER BY start DESC LIMIT 1";
-    $result = $conn->query($sql);
+session_start();
+include '../../backend/db.php';
 
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $startDate = $row['start'];
-        $endDate = $row['end'];
-    }
+$startDate = "";
+$endDate = "";
+$sql = "SELECT start, end FROM application_period ORDER BY start DESC LIMIT 1";
+$result = $conn->query($sql);
+
+if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $startDate = $row['start'];
+    $endDate = $row['end'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -26,19 +27,11 @@
     <div class="Admin">
         <div class="LogButtons">
             <?php if (isset($_SESSION['username'])): ?>
-                <button class="LogBtn">
-                    <a href="../../backend/logout.php" class="NavLinks">Log Out</a>
-                </button>
-                <button class="LogBtn">
-                    <a href="../html/sign-up.html" class="NavLinks">Sign Up</a>
-                </button>
+                <button class="LogBtn"><a href="../../backend/logout.php" class="NavLinks">Log Out</a></button>
+                <button class="LogBtn"><a href="../html/sign-up.html" class="NavLinks">Sign Up</a></button>
             <?php else: ?>
-                <button class="LogBtn">
-                    <a href="../html/login.html" class="NavLinks">Log In</a>
-                </button>
-                <button class="LogBtn">
-                    <a href="../html/sign-up.html" class="NavLinks">Sign Up</a>
-                </button>
+                <button class="LogBtn"><a href="../html/login.html" class="NavLinks">Log In</a></button>
+                <button class="LogBtn"><a href="../html/sign-up.html" class="NavLinks">Sign Up</a></button>
             <?php endif; ?>
         </div>
 
@@ -87,19 +80,34 @@
             </form>
 
             <!-- Εμφάνιση Δηλώσεων -->
-            <form class="form" method="post" action="admin.php">
+            <form class="form" method="post" action="admin.php"  
+                style="width: 95%; max-width: 1200px; margin: 20px auto; padding: 20px; background-color: #f8f8f8; border-radius: 10px;">
                 <h2>Δηλώσεις</h2>
                 <table class="reqs-table">
                     <tr>
                         <td>
-                            <select id="filter" name="filter">
+                            <select id="filter" name="filter" onchange="toggleFilterInput()">
                                 <option value="1" disabled selected>Φίλτρο</option>
                                 <option value="2">Εμφάνιση όλων κατά φθίνουσα σειρά</option>
                                 <option value="3">Καθορισμός ελάχιστου ποσοστού επιτυχίας</option>
-                                <option value="4">Έμφάνιση αιτήσεων συγκεκριμένου πανεπιστημίου</option>
+                                <option value="4">Εμφάνιση αιτήσεων συγκεκριμένου πανεπιστημίου</option>
                             </select>
                         </td>
-                        <td><input type="text" id="filterText" name="filterText" placeholder="..." ></td>
+                        <td>
+                            <input type="text" id="filterText" name="filterText" placeholder="..." style="display: block;">
+                            <select name="universityId" id="universityDropdown" style="display: none;">
+                                <option value="">-- Επιλογή Πανεπιστημίου --</option>
+                                <?php
+                                    $uni_sql = "SELECT id, name FROM universities ORDER BY name ASC";
+                                    $uni_result = $conn->query($uni_sql);
+                                    if ($uni_result->num_rows > 0) {
+                                        while ($uni = $uni_result->fetch_assoc()) {
+                                            echo "<option value=\"" . $uni['id'] . "\">" . htmlspecialchars($uni['name']) . "</option>";
+                                        }
+                                    }
+                                ?>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align:center;">
@@ -109,33 +117,71 @@
                 </table>
 
                 <?php
-                    if (isset($_POST['showApp'])) {
-                        $sql = "SELECT 
-                                    applications.*, 
-                                    users.name, 
-                                    users.surname 
-                                FROM applications
-                                INNER JOIN users ON applications.user_id = users.id";
+                if (isset($_POST['showApp'])) {
+                    $filter = $_POST['filter'] ?? '';
+                    $filterText = trim($_POST['filterText'] ?? '');
+                    $universityId = intval($_POST['universityId'] ?? 0);
 
-                        $result = $conn->query($sql);
+                    $sql = "SELECT 
+                                a.*, 
+                                u.name, 
+                                u.surname, 
+                                u1.name AS uni1_name, 
+                                u2.name AS uni2_name, 
+                                u3.name AS uni3_name 
+                            FROM applications a
+                            INNER JOIN users u ON a.user_id = u.id
+                            LEFT JOIN universities u1 ON a.uni_1 = u1.id
+                            LEFT JOIN universities u2 ON a.uni_2 = u2.id
+                            LEFT JOIN universities u3 ON a.uni_3 = u3.id";
 
-                        if ($result->num_rows > 0) {
-                            echo "<table class='requirements-table' border='1'>";
-                            echo "<tr><th>Όνομα</th><th>Επίθετο</th><th>Μέσος Όρος</th><th>Επίπεδο Αγγλικών</th><th>Άλλη Γλώσσα</th></tr>";
-                            while ($row = $result->fetch_assoc()) {
-                                echo "<tr>";
-                                echo "<td>" . htmlspecialchars($row['name']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['surname']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['average']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['english_level']) . "</td>";
-                                echo "<td>" . htmlspecialchars($row['other_langs']) . "</td>";
-                                echo "</tr>";
-                            }
-                            echo "</table>";
-                        } else {
-                            echo "<p>Δεν υπάρχουν αιτήσεις.</p>";
-                        }
+                    if ($filter == "2") {
+                        $sql .= " ORDER BY a.average DESC";
+                    } elseif ($filter == "3" && is_numeric($filterText)) {
+                        $sql .= " WHERE a.pass_percentage >= " . floatval($filterText);
+                        $sql .= " ORDER BY a.pass_percentage DESC";
+                    } elseif ($filter == "4" && $universityId > 0) {
+                        $sql .= " WHERE a.uni_1 = $universityId OR a.uni_2 = $universityId OR a.uni_3 = $universityId";
                     }
+
+                    $result = $conn->query($sql);
+
+                    if ($result && $result->num_rows > 0) {
+                        echo "<table class='requirements-table' border='1'>";
+                        echo "<tr>
+                                <th>Όνομα</th>
+                                <th>Επίθετο</th>
+                                <th>Μέσος Όρος</th>
+                                <th>Επίπεδο Αγγλικών</th>
+                                <th>Άλλη Γλώσσα</th>
+                                <th>1η Επιλογή</th>
+                                <th>2η Επιλογή</th>
+                                <th>3η Επιλογή</th>
+                                <th>Ποσοστό Επιτυχίας</th>
+                                <th>Τελική Έγκριση</th>
+                              </tr>";
+                        while ($row = $result->fetch_assoc()) {
+                            $isAccepted = ($row['is_accepted'] == 1) ? "checked" : "";
+                            echo "<tr>";
+                            echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['surname']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['average']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['english_level']) . "</td>";
+                            echo "<td>" . ($row['other_langs'] ? "Ναι" : "Όχι") . "</td>";
+                            echo "<td>" . htmlspecialchars($row['uni1_name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['uni2_name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['uni3_name']) . "</td>";
+                            echo "<td>" . htmlspecialchars($row['pass_percentage']) . "%</td>";
+                            echo "<td>
+                                    <input type='checkbox' class='accept-checkbox' data-id='" . $row['id'] . "' $isAccepted>
+                                  </td>";
+                            echo "</tr>";
+                        }
+                        echo "</table>";
+                    } else {
+                        echo "<p>Δεν υπάρχουν αιτήσεις.</p>";
+                    }
+                }
                 ?>
             </form>
         </div>
@@ -145,6 +191,8 @@
             <img src="../media/erasmus.jpg" alt="Logo" class="ErasmusLogo">
         </div>
     </div>
+
+    <!-- Flatpickr & JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         flatpickr("#start", { dateFormat: "Y-m-d" });
@@ -164,6 +212,38 @@
             .catch(error => {
                 document.getElementById("periodMessage").textContent = "Σφάλμα κατά την αποθήκευση.";
                 console.error("Error:", error);
+            });
+        });
+
+        function toggleFilterInput() {
+            const filter = document.getElementById("filter").value;
+            const filterText = document.getElementById("filterText");
+            const universityDropdown = document.getElementById("universityDropdown");
+
+            if (filter === "4") {
+                filterText.style.display = "none";
+                universityDropdown.style.display = "block";
+            } else {
+                filterText.style.display = "block";
+                universityDropdown.style.display = "none";
+            }
+        }
+
+        document.querySelectorAll('.accept-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const formData = new FormData();
+                formData.append('id', this.getAttribute('data-id'));
+                if (this.checked) {
+                    formData.append('accepted', 1);
+                }
+
+                fetch('../../backend/update_acceptance.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(resp => resp.text())
+                .then(data => console.log("Saved:", data))
+                .catch(error => console.error("Error:", error));
             });
         });
     </script>
