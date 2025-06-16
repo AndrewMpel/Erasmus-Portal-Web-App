@@ -128,9 +128,9 @@
                             <div class="form-control" >
                             <small>Error message</small><br>
                             <label for="Yes">Ναί:</label>
-                            <input type="radio" id="Languages" name="languages" value="Yes" class="radios">
+                            <input type="radio" id="Languages" name="languages" value="1" class="radios">
                             <label for="No">Όχι:</label>
-                            <input type="radio" id="Languages" name="languages" value="No" class="radios"><br>
+                            <input type="radio" id="Languages" name="languages" value="0" class="radios"><br>
                             
                              </div>
                         </td>

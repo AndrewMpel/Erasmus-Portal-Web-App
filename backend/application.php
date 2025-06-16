@@ -65,7 +65,7 @@
             grade_file, english_file, otherlangs_file, terms
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-        $x->bind_param("idddsiiisssi",
+        $x->bind_param("iddsiiiisssi",
             $user_id, $passed_courses, $average, $english, $languages,
             $firstChoice, $secondChoice, $thirdChoice,
             $gradesPath, $languageCertPath, $languageCert2Path, $agree
