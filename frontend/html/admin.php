@@ -44,8 +44,12 @@ if ($result && $result->num_rows > 0) {
         <div class="Navbar">
             <button class="Navbuttons"><a href="../html/index.php" class="NavLinks">Αρχική</a></button>
             <button class="Navbuttons"><a href="../html/reqs.html" class="NavLinks">Απαιτήσεις</a></button>
-            <button class="Navbuttons"><a href="../html/application.php" class="NavLinks">Αίτηση</a></button>
-            <button class="Navbuttons"><a href="../html/more.html" class="NavLinks">Περισσότερα</a></button>
+            <?php if ($_SESSION['canApply']): ?>
+                <button class="Navbuttons"><a href="../html/application.php" class="NavLinks">Αίτηση</a></button>
+            <?php else: ?>
+                <button class="Navbuttons" disabled style="opacity: 0.5; cursor: not-allowed;">Αίτηση</button>
+            <?php endif; ?>
+            <button class="Navbuttons"><a href="../html/more.php" class="NavLinks">Περισσότερα</a></button>
             <?php 
                 $sql = "SELECT * FROM users WHERE is_admin = 1";
                 $result = $conn->query($sql);

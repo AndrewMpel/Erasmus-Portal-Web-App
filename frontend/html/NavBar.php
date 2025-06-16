@@ -1,8 +1,10 @@
 <?php
+session_start();
 $sql = "SELECT start, end FROM application_period ORDER BY start DESC LIMIT 1";
 $result = $conn->query($sql);
 
 $canApply = false;
+$_SESSION['canApply'] = $canApply;
 $application_message = "";
 $display_date_range_for_active_period = "";
 
@@ -14,9 +16,9 @@ if ($result && $result->num_rows > 0) {
 
     $startDateStr = $startDate->format('d/m/Y');
     $endDateStr = $endDate->format('d/m/Y');
-
     if ($today >= $startDate && $today <= $endDate) {
         $canApply = true;
+        $_SESSION['canApply'] = $canApply;
         $display_date_range_for_active_period = "Οι ημερομηνίες για την αίτηση είναι: " . $startDateStr . " έως " . $endDateStr . ".";
     } else if ($today > $endDate) {
         $application_message = "Η προθεσμία υποβολής αιτήσεων έχει λήξει στις " . $endDateStr . ".";
@@ -54,7 +56,7 @@ if ($conn) {
     <?php else: ?>
         <button class="Navbuttons" disabled style="opacity: 0.5; cursor: not-allowed;">Αίτηση</button>
     <?php endif; ?>
-    <button class="Navbuttons"><a href="../html/more.html" class="NavLinks">Περισσότερα</a></button>
+    <button class="Navbuttons"><a href="../html/more.php" class="NavLinks">Περισσότερα</a></button>
 
     <?php
     $sql_admin = "SELECT * FROM users WHERE is_admin = 1";
